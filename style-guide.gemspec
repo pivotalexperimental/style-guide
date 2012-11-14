@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   s.add_dependency "rails"
+  s.add_dependency "sass-rails"
   s.add_dependency "jquery-rails"
   s.add_dependency "hogan_assets"
 
