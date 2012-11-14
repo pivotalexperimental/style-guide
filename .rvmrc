@@ -1,1 +1,1 @@
-rvm --create ruby-1.9.3-p286@style-guide
+rvm --create ruby-1.9.3-p194@style-guide
