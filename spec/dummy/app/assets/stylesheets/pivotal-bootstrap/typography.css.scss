@@ -10,7 +10,11 @@ h1, h2, h3, h4, h5, h6 {
 	text-transform: uppercase;
 }
 
-h1 {
-	color: $freshBlue;
+section h1 {
+	color: $freshRed;
 	font-weight: 900;
+}
+
+#overview {
+  background: $freshBlue;
 }
