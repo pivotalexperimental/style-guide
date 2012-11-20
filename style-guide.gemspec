@@ -16,6 +16,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails"
   s.add_dependency "sass-rails"
+  s.add_dependency "less-rails"
+  s.add_dependency "therubyracer"
   s.add_dependency "jquery-rails"
   s.add_dependency "hogan_assets"
 
