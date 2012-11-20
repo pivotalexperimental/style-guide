@@ -4,7 +4,7 @@ PATH
     style-guide (0.0.1)
       hogan_assets
       jquery-rails
-      less-rails
+      less
       rails
       sass-rails
       therubyracer
@@ -77,9 +77,6 @@ GEM
     json (1.7.5)
     less (2.2.2)
       commonjs (~> 0.2.6)
-    less-rails (2.2.6)
-      actionpack (>= 3.1)
-      less (~> 2.2.0)
     libv8 (3.3.10.4)
     listen (0.5.3)
     lumberjack (1.0.2)
