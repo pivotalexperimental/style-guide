@@ -1,0 +1,11 @@
+# This file is managed by chef! Override node.default["git_pairs_authors"] in attributes/git_pairs.rb to modify.
+
+pairs:
+  dr: Doc Ritezel; doc
+  oa: Ofri Afek; ofri
+
+email:
+  prefix: pair
+  domain: pivotallabs.com
+
+global: true
