@@ -6,3 +6,16 @@ rvm:
   - rbx-18mode
   - ree
 script: script/ci.sh
+env:
+  global:
+    secure: "Qwe5ArAGqbJeTk//8mwd5GSHazoJ+3L5B/MxhI7Ixx7Oe+Jmr54xU2T+q8c1\nQaxYKuACVjtUF/1Os8AiYeNL4OMVG4b+Zg285NkgHf7ouhg+y6PFTEUerSyi\nzJWK/h7Jqsj392BU6Anr5mf+SmySp3kphjGxe9TsR/2DPJC4OoQ="
+after_script:
+  - gem install heroku
+  - git remote add heroku git@heroku.com:swivel.git
+  - echo "Host heroku.com" >> ~/.ssh/config
+  - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
+  - echo "   CheckHostIP no" >> ~/.ssh/config
+  - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+  - heroku keys:clear
+  - yes | heroku keys:add
+  - yes | git push heroku master
