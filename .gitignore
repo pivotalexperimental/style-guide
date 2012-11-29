@@ -9,3 +9,4 @@ spec/dummy/.sass-cache
 spec/dummy/app/assets/.DS_Store
 
 spec/dummy/app/assets/stylesheets/.DS_Store
+/tmp
