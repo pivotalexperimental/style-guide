@@ -1,3 +1,6 @@
+$stdout.sync = true
+$stderr.sync = true
+
 require 'rubygems'
 gemfile = File.expand_path('../../../../Gemfile', __FILE__)
 
