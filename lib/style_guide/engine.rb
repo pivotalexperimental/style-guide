@@ -1,5 +1,6 @@
 require "rails/engine"
 require "style_guide/config"
+require "style_guide/section"
 
 module StyleGuide
   class Engine < ::Rails::Engine

@@ -1,0 +1,5 @@
+<ul class="nav nav-list bs-docs-sidenav">
+<% @active.partials.each do |partial| %>
+  <li><a href="#<%= partial.id %>"><i class="icon-chevron-right"></i> <%= partial.title %></a></li>
+<% end %>
+</ul>

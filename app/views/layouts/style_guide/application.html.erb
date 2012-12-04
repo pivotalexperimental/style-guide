@@ -27,9 +27,11 @@
           <a class="brand" href="/">Bootstrap</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="index active">
-                <a href="/style-guide">Base CSS</a>
+            <% @sections.each_with_index do |section, index| %>
+              <li<%= (section == @active) ? ' class="active"'.html_safe : '' %>>
+                <a href="<%= root_path %>"><%= section.title %></a>
               </li>
+            <% end %>
             </ul>
           </div>
         </div>

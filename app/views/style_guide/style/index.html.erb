@@ -2,30 +2,21 @@
 ================================================== -->
 <header class="jumbotron subhead" id="overview">
   <div class="container">
-    <h1>Base CSS</h1>
-    <p class="lead">Fundamental HTML elements styled and enhanced with extensible classes.</p>
+    <h1><%= @active.title %></h1>
   </div>
 </header>
-
 
 <div class="container">
   <!-- Docs nav
   ================================================== -->
   <div class="row">
     <div class="span3 bs-docs-sidebar">
-      <ul class="nav nav-list bs-docs-sidenav">
-        <li><a href="#typography"><i class="icon-chevron-right"></i> Typography</a></li>
-        <li><a href="#code"><i class="icon-chevron-right"></i> Code</a></li>
-        <li><a href="#tables"><i class="icon-chevron-right"></i> Tables</a></li>
-        <li><a href="#forms"><i class="icon-chevron-right"></i> Forms</a></li>
-        <li><a href="#buttons"><i class="icon-chevron-right"></i> Buttons</a></li>
-        <li><a href="#images"><i class="icon-chevron-right"></i> Images</a></li>
-        <li><a href="#icons"><i class="icon-chevron-right"></i> Icons by Glyphicons</a></li>
-      </ul>
+      <%= render :partial => "sidebar" %>
     </div>
+
     <div class="span9">
-      <% @partials.each do |partial| %>
-        <%= render :file => partial %>
+      <% @active.partials.each do |partial| %>
+        <%= render :file => partial.path %>
       <% end %>
     </div>
   </div>
