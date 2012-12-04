@@ -1,1 +1,1 @@
-web: bundle exec bash -lc "cd spec/dummy && rails server"
+web: bundle exec bash -lc "cd spec/dummy && rails server --port $PORT"
