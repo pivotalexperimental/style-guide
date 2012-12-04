@@ -1,6 +1,12 @@
 # StyleGuide
 
+[![Build Status](https://secure.travis-ci.org/pivotalexperimental/style-guide.png?branch=master)](https://travis-ci.org/pivotalexperimental/style-guide)
+
 Quickly see the styled output of your application.
+
+## Example
+
+The canonical deployed instance is located at [http://swivel.herokuapp.com](http://swivel.herokuapp.com)
 
 ## Usage
 
