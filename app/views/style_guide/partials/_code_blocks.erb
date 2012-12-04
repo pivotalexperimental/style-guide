@@ -1,0 +1,12 @@
+<p>
+  Use <code>&lt;pre&gt;</code> for multiple lines of code. Be sure to escape any angle brackets in the code for proper rendering.
+</p>
+
+<pre>
+  def find(*file_names)
+    pathname.ascend do |path|
+      file_name = file_names.detect { |fn| path.join(fn).file? }
+      break path.join(file_name) if file_name
+    end
+  end
+</pre>
