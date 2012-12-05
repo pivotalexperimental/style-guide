@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails"
   s.add_dependency "jquery-rails"
 
+  s.add_development_dependency "libv8"
   s.add_development_dependency "therubyracer"
 
   s.add_development_dependency "foreman"
