@@ -9,7 +9,7 @@ module StyleGuide
     end
 
     def id
-      @id ||= path.gsub(/[^a-zA-Z0-9]/, " ").strip.gsub(/\s+/, "_")
+      @id ||= path.to_s.downcase.gsub(/[^a-zA-Z0-9]/, " ").strip.gsub(/\s+/, "_")
     end
 
     def title
@@ -17,7 +17,7 @@ module StyleGuide
     end
 
     def partials
-      partial_paths.map { |path| StyleGuide::Partial.new(path) }
+      partial_paths.map { |path| StyleGuide::Partial.new(path) }.sort_by { |p| p.title }
     end
 
     private

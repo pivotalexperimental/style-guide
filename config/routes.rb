@@ -1,4 +1,4 @@
 StyleGuide::Engine.routes.draw do
   root :to => "style#index"
-  resource :style, :path => '', :only => [:index]
+  match "/style/:id" => "style#show", :as => :style
 end

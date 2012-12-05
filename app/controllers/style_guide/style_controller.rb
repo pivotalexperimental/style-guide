@@ -4,6 +4,14 @@ module StyleGuide
 
     def index
       @active = @sections.first
+      render :show
+    end
+
+    def show
+      p params[:id]
+      p @sections.map(&:id)
+      @active = @sections.detect { |section| section.id == params[:id] }
+      p @active
     end
   end
 end
