@@ -1,0 +1,16 @@
+.swatch {
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+	margin:10px;
+}
+
+.freshBlue 			{background-color: #6D99D3;}
+.freshRed 			{background-color: #B90020;}
+.freshGold 			{background-color: #C59E16;}
+.freshBlack 		{background-color: #5D5C5C;}
+.freshDarkGray		{background-color: #5D5C5C;}
+.freshGray 			{background-color: #888;}
+.freshLightGray 	{background-color: #ddd;}
+.freshLighterGray	{background-color: #f5f5f5;}
+
