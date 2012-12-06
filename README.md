@@ -1,6 +1,6 @@
 # StyleGuide
 
-[![Build Status](https://secure.travis-ci.org/pivotalexperimental/style-guide.png?branch=master)](https://travis-ci.org/pivotalexperimental/style-guide) [![Dependency Status](https://gemnasium.com/pivotalexperimental/style-guide.png)](https://gemnasium.com/pivotalexperimental/style-guide)
+[![Build Status](https://secure.travis-ci.org/pivotalexperimental/style-guide.png?branch=master)](https://travis-ci.org/pivotalexperimental/style-guide) [![Dependency Status](https://gemnasium.com/pivotalexperimental/style-guide.png)](https://gemnasium.com/pivotalexperimental/style-guide) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/pivotalexperimental/style-guide)
 
 Quickly see the styled output of your application.
 
