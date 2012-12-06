@@ -17,9 +17,7 @@
     <div class="span9">
       <% @active.partials.each do |partial| %>
         <section id="<%= partial.id %>">
-          <div class="page-header">
             <h1><%= partial.title %></h1>
-          </div>
           <div class="bs-docs-example">
             <%= render :file => partial.path %>
           </div>
