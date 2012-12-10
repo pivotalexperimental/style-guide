@@ -2,52 +2,140 @@
 /* Tweak navbar brand link to be super sleek
 -------------------------------------------------- */
 
-body > .navbar {
+.style-guide-bar {
   font-size: 13px;
-}
-
-.navbar .navbar-inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  margin-bottom: 0;
   background-color: #f5f5f5;
-  background-image: none;
-  border:none;
-  -webkit-box-shadow: none;
-     -moz-box-shadow: none;
-          box-shadow: none;
-
 }
 
-.navbar-inverse .nav .active > a:hover,
-.navbar-inverse .nav .active > a {
-  background-color: #ddd;
-  color:#888;
-  text-shadow:none;
+.style-guide-bar-container {
+  width: 100%;
+  margin: 0 auto;
 }
 
-.navbar-inverse .nav > li > a:hover,
-.navbar-inverse .nav > li > a {
-  color:#888;
-  text-shadow:none;
-}
-
-.navbar-inverse .nav > li > a:hover{
-  background-color: #ddd;
-}
-
-/* Change the docs' brand */
-body > .navbar .brand {
-  padding-right: 0;
-  padding-left: 0;
-  margin-left: 20px;
-  float: right;
-  font-weight: bold;
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0,0,0,.1), 0 -1px 30px rgba(0,0,0,.125);
-  -webkit-transition: all .2s linear;
-     -moz-transition: all .2s linear;
-          transition: all .2s linear;
-}
-body > .navbar .brand:hover {
+.style-guide-bar a {
   text-decoration: none;
-  text-shadow: 0 1px 0 rgba(255,255,255,1);
+}
+
+.style-guide-bar a {
+  color: white;
+}
+
+.style-guide-bar a.brand {
+  text-decoration: none;
+  text-shadow: 0 -1px 1px rgba(0,0,0,.1), 0 1px 1px rgba(0,0,0,.2);
+  line-height: 20px;
+  font-size: 20px;
+  height: 20px;
+}
+
+.style-guide-bar a.brand,
+.style-guide-bar label  {
+  display: block;
+  color: white;
+  margin: 5px 10px;
+  padding: 5px 10px;
+  font-weight: bold;
+}
+
+.style-guide-bar label {
+  line-height: 16px;
+  font-size: 16px;
+  height: 16px;
+  float: right;
   color: #888;
+  cursor: pointer;
+
+  -webkit-user-select: none;
+     -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+          user-select: none;
+}
+
+.style-guide-bar input[type=checkbox] {
+  display: none;
+}
+
+.style-guide-bar input:checked + ul {
+  height: auto;
+  padding: 5px 10px;
+}
+
+.style-guide-bar ul {
+  overflow: hidden;
+  height: 0;
+  background: #ddd;
+  clear: both;
+  margin: 0;
+
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1), 0 3px 3px rgba(0, 0, 0, .15);
+     -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1), 0 3px 3px rgba(0, 0, 0, .15);
+          box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1), 0 3px 3px rgba(0, 0, 0, .15);
+}
+
+.style-guide-bar li {
+  padding: 5px 5px;
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+@media (min-width: 480px) {
+  .style-guide-bar label {
+    display: none;
+  }
+
+  .style-guide-bar .brand {
+    float: right;
+  }
+
+  .style-guide-bar input:checked + ul {
+    padding: 0;
+  }
+
+  .style-guide-bar ul {
+    margin: 0;
+
+    height: auto;
+    clear: none;
+    background: transparent;
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+  }
+
+  .style-guide-bar li {
+    display: inline-block;
+    margin: 0;
+    padding:0;
+  }
+
+  .style-guide-bar li a {
+    color: #888;
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    padding: 10px;
+  }
+
+  .style-guide-bar .active a,
+  .style-guide-bar li a:hover {
+    background-color: #ddd;
+  }
+
+  .style-guide-bar .active a:hover,
+  .style-guide-bar .active a {
+    background-color: #ddd;
+    color: #888;
+  }
+}
+
+@media (min-width: 960px) {
+  .style-guide-bar-container {
+    width: 960px;
+  }
 }

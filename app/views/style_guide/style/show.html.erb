@@ -1,28 +1,18 @@
-<!-- Subhead
-================================================== -->
-<header class="jumbotron">
-  <div class="container">
-    <h1><%= @active.title %></h1>
+<%= render :partial => "header" %>
+
+<div class="style-guide-content">
+  <div class="style-guide-sidebar">
+    <%= render :partial => "sidebar" %>
   </div>
-</header>
 
-<div class="container">
-  <!-- Docs nav
-  ================================================== -->
-  <div class="row">
-    <div class="span3 bs-docs-sidebar">
-      <%= render :partial => "sidebar" %>
-    </div>
-
-    <div class="span9">
-      <% @active.partials.each do |partial| %>
-        <section id="<%= partial.id %>">
-            <h1><%= partial.title %></h1>
-          <div class="bs-docs-example">
-            <%= render :file => partial.path %>
-          </div>
-        </section>
-      <% end %>
-    </div>
+  <div class="style-guide-sections">
+    <% @active.partials.each do |partial| %>
+      <section id="<%= partial.id %>">
+        <h1><%= partial.title %></h1>
+        <div class="style-guide-partial">
+          <%= render :file => partial.path %>
+        </div>
+      </section>
+    <% end %>
   </div>
 </div>

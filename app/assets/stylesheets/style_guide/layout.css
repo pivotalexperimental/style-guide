@@ -1,47 +1,35 @@
-/* Body and structure
--------------------------------------------------- */
-
 body {
   position: relative;
-  padding-top: 40px;
+  padding: 40px 0 0 0;
   font-family: "ars-maquette-web";
 }
 
-/* Code in headings */
-h3 code {
-  font-size: 14px;
-  font-weight: normal;
+.style-guide-content {
+  width: 100%;
+  margin: 0 auto;
 }
 
-/* Sections
--------------------------------------------------- */
-
-/* padding for in-page bookmarks and fixed navbar */
 section {
   padding-top: 30px;
+  background-color: white;
+  margin: 10px 0;
+  padding: 10px;
 }
+
 section h1 {
   font-weight:100;
   color: #888;
   font-size: 24px;
   line-height: 40px;
+  margin-top: 0;
   margin-bottom: 20px;
   border-bottom: 1px solid #ddd;
 }
-section > .page-header,
-section > .lead {
-  color: #5a5a5a;
-}
+
 section > ul li {
   margin-bottom: 5px;
 }
 
-/* Separators (hr) */
-.bs-docs-separator {
-  margin: 40px 0 39px;
-}
-
-/* Faded out hr */
 hr.soften {
   height: 1px;
   margin: 70px 0;
@@ -50,4 +38,32 @@ hr.soften {
   background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
   background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
   border: 0;
+}
+
+@media (min-width: 480px) {
+  .style-guide-content .style-guide-sidebar {
+    width: 288px;
+  }
+}
+
+@media (min-width: 960px) {
+  .style-guide-content {
+    width: 960px;
+    position: relative;
+  }
+
+  .style-guide-content .style-guide-sidebar {
+    position: absolute;
+  }
+
+  .style-guide-sidebar.style-guide-fixed {
+    position: fixed;
+    top: 0;
+  }
+
+  .style-guide-content .style-guide-sections {
+    width: 650px;
+    margin-left: 288px;
+    float: left;
+  }
 }
