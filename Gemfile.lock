@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    style-guide (0.1.0)
+    style-guide (0.2.0)
       jquery-rails
       rails
 
@@ -78,7 +78,7 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.1)
     mime-types (1.19)
-    multi_json (1.4.0)
+    multi_json (1.5.0)
     polyglot (0.3.3)
     pry (0.9.10)
       coderay (~> 1.0.5)
