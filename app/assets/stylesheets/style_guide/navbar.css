@@ -1,7 +1,3 @@
-
-/* Tweak navbar brand link to be super sleek
--------------------------------------------------- */
-
 .style-guide-bar {
   font-size: 13px;
   position: absolute;
@@ -23,34 +19,33 @@
 }
 
 .style-guide-bar a {
-  color: white;
+  color: #888;
+  text-decoration: none;
 }
 
 .style-guide-bar a.brand {
-  text-decoration: none;
-  text-shadow: 0 -1px 1px rgba(0,0,0,.1), 0 1px 1px rgba(0,0,0,.2);
-  line-height: 20px;
-  font-size: 20px;
-  height: 20px;
+  color: #ddd;
+  text-shadow: 0 0 10px rgba(0,0,0,.05);
 }
 
 .style-guide-bar a.brand,
 .style-guide-bar label  {
   display: block;
-  color: white;
+  height: 20px;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: normal;
   margin: 5px 10px;
   padding: 5px 10px;
-  font-weight: bold;
 }
 
 .style-guide-bar label {
-  line-height: 16px;
-  font-size: 16px;
-  height: 16px;
-  float: right;
   color: #888;
+  position: absolute;
+  top: 0;
+  right: 0;
   cursor: pointer;
-
+  text-shadow: 0 -1px 0 rgba(0,0,0,.1), 0 1px 0 rgba(255, 255, 255, 0.9);
   -webkit-user-select: none;
      -moz-user-select: -moz-none;
    -khtml-user-select: none;
@@ -72,16 +67,24 @@
   background: #ddd;
   clear: both;
   margin: 0;
-
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1), 0 3px 3px rgba(0, 0, 0, .15);
      -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1), 0 3px 3px rgba(0, 0, 0, .15);
           box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1), 0 3px 3px rgba(0, 0, 0, .15);
 }
 
 .style-guide-bar li {
-  padding: 5px 5px;
-  margin: 5px 0;
+  margin: 10px 0;
   font-size: 14px;
+}
+
+.style-guide-bar li a {
+  padding: 2px 5px;
+}
+
+.style-guide-bar .active a,
+.style-guide-bar li a:hover {
+  background-color: #888;
+  color: #f5f5f5;
 }
 
 @media (min-width: 480px) {
@@ -99,7 +102,6 @@
 
   .style-guide-bar ul {
     margin: 0;
-
     height: auto;
     clear: none;
     background: transparent;
@@ -111,7 +113,7 @@
   .style-guide-bar li {
     display: inline-block;
     margin: 0;
-    padding:0;
+    padding: 0;
   }
 
   .style-guide-bar li a {

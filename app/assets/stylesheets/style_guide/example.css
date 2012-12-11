@@ -1,9 +1,10 @@
 .style-guide-partial {
   position: relative;
-  padding: 39px 19px 14px;
-  *padding-top: 19px;
+  padding: 10px 20px;
+  padding-top: 32px;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #f5f5f5;
+  overflow: hidden;
 }
 
 .style-guide-partial:after {
@@ -11,10 +12,13 @@
   position: absolute;
   top: -1px;
   left: -1px;
-  padding: 3px 7px;
-  font-size: 12px;
+  padding: 0 5px;
+  font-size: 11px;
+  line-height: 18px;
+  height: 18px;
   font-weight: 100;
   background-color: #f5f5f5;
   border: 1px solid #ddd;
   color: #888;
+  opacity: 0.75;
 }
