@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    style-guide (0.2.0)
+    style-guide (0.2.1)
       jquery-rails
       rails
 
