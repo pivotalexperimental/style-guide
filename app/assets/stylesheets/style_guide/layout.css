@@ -9,14 +9,14 @@ body {
   margin: 0 auto;
 }
 
-section {
+.style-guide-section {
   padding-top: 30px;
   background-color: white;
   margin: 10px 0;
   padding: 10px;
 }
 
-section h1 {
+.style-guide-section-header {
   font-weight:100;
   color: #888;
   font-size: 24px;
