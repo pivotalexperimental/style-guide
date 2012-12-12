@@ -13,6 +13,8 @@ en:
         <code>.btn-mini</code> for additional sizes.
       button_types: >
         Need different buttons for different occasions?  Add a class!
+      code_inline: >
+        Use <code>&lt;code&gt;</code> for inline snippets of code.
       code_blocks: >
         Use <code>&lt;pre&gt;</code> for multiple lines of code.
         Be sure to escape any angle brackets in the code for proper rendering.
