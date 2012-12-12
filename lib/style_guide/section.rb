@@ -9,7 +9,7 @@ module StyleGuide
     end
 
     def id
-      @id ||= path.to_s.downcase.gsub(/[^a-zA-Z0-9]/, " ").strip.gsub(/\s+/, "_")
+      @id ||= File.basename(path).downcase.gsub(/[^a-zA-Z0-9]/, " ").strip.gsub(/\s+/, "_")
     end
 
     def title

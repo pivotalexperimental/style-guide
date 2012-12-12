@@ -28,19 +28,19 @@ describe StyleGuide::Section do
     subject { section.id }
 
     context "with a simple path" do
-      it { should == "magnetic_sputum" }
+      it { should == "sputum" }
     end
 
     context "with a good activerecord path" do
       let(:path) { "/tasty/bicycle_tires" }
 
-      it { should == "tasty_bicycle_tires" }
+      it { should == "bicycle_tires" }
     end
 
     context "with a path containing extra stuff" do
       let(:path) { "/help/kocher%has-m1y=keyb^oaard" }
 
-      it { should == "help_kocher_has_m1y_keyb_oaard" }
+      it { should == "kocher_has_m1y_keyb_oaard" }
     end
   end
 
