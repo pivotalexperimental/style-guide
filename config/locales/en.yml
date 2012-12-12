@@ -1,6 +1,6 @@
 en:
   style_guide:
-    bootstrap_base_css:
+    bootstrap_base:
       button_disabled_anchor: >
         Make <code>&lt;a&gt;</code> buttons look unclickable by adding
         the <code>.disabled</code> class
@@ -11,3 +11,28 @@ en:
         Fancy larger or smaller buttons?
         Add <code>.btn-large</code>, <code>.btn-small</code>, or
         <code>.btn-mini</code> for additional sizes.
+      button_types: >
+        Need different buttons for different occasions?  Add a class!
+      code_blocks: >
+        Use <code>&lt;pre&gt;</code> for multiple lines of code.
+        Be sure to escape any angle brackets in the code for proper rendering.
+      forms_default_styles: >
+        Individual form controls receive styling, but without any required base
+        class on the <code>&lt;form&gt;</code> or large changes in markup.
+        Results in stacked, left-aligned labels on top of form controls.
+      forms_search: >
+        Add <code>.form-search</code> to the form and <code>.search-query</code>
+        to the <code>&lt;input&gt;</code> for an extra-rounded text input.
+      forms_inline: >
+        Add <code>.form-inline</code> for left-aligned labels and inline-block
+        controls for a compact layout.
+      forms_horizontal: >
+        Right align labels and float them to the left to make them appear on
+        the same line as controls.
+        Requires the most markup changes from a default form:
+        <ul>
+          <li>Add <code>.form-horizontal</code> to the form</li>
+          <li>Wrap labels and controls in <code>.control-group</code></li>
+          <li>Add <code>.control-label</code> to the label</li>
+          <li>Wrap any associated controls in <code>.controls</code> for proper alignment</li>
+        </ul>

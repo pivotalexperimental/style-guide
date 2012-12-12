@@ -1,0 +1,8 @@
+<pre>
+  def find(*files)
+    pathname.ascend do |path|
+      file_name = files.detect { |fn| path.join(fn).file? }
+      break path.join(file_name) if file_name
+    end
+  end
+</pre>

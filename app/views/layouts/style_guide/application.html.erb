@@ -17,7 +17,7 @@
         <label for="style-guide-checkbox">Sections</label>
         <a class="brand" href="/">Style Guide</a>
         <input id="style-guide-checkbox" type="checkbox" />
-        <ul class="nav">
+        <ul>
         <% @sections.each_with_index do |section, index| %>
           <li<%= (section == @active) ? ' class="active"'.html_safe : '' %>>
             <a href="<%= style_path(section.id) %>"><%= section.title %></a>

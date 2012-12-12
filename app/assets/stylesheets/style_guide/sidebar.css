@@ -3,6 +3,7 @@
 }
 
 .style-guide-sidebar ul {
+  list-style: none;
   padding: 0;
   margin: 30px 20px;
   border: 1px solid #ddd;
@@ -26,6 +27,7 @@
 }
 
 .style-guide-sidebar a i {
+  font-style: normal;
   float: right;
   font-size: 30px;
   line-height: 18px;
