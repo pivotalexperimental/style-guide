@@ -36,3 +36,20 @@ en:
           <li>Add <code>.control-label</code> to the label</li>
           <li>Wrap any associated controls in <code>.controls</code> for proper alignment</li>
         </ul>
+      form_controls_input: >
+        Most common form control, text-based input fields.
+        Includes support for all HTML5 types:
+        text, password, datetime, datetime-local, date, month, time, week,
+        number, email, url, search, tel, and color.
+        Requires the use of a specified <code>type</code> at all times.
+      form_controls_textarea: >
+        Form control which supports multiple lines of text.
+        Change <code>rows</code> attribute as necessary.
+      form_controls_checkbox_and_radio: >
+        Checkboxes are for selecting one or several options in a list while
+        radios are for selecting one option from many.
+        Add the <code>.inline</code> class to a series of checkboxes or radios
+        for controls to appear on the same line.
+      form_controls_select: >
+        Use the default option or specify a <code>multiple="multiple"</code>
+        to show multiple options at once.
