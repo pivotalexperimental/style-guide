@@ -1,5 +1,7 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  style_guide:
+    styles:
+      00swatches: All the colors for the site.
+      three_dee: >
+        Provides a visually-irritating, though 3D-glasses friendly, text shadow
+        on all the text you want to pass in.  Just add <code>.three-dee</code>!

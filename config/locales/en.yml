@@ -1,0 +1,13 @@
+en:
+  style_guide:
+    bootstrap_base_css:
+      button_disabled_anchor: >
+        Make <code>&lt;a&gt;</code> buttons look unclickable by adding
+        the <code>.disabled</code> class
+      button_disabled_element: >
+        Make <code>&lt;button&gt;</code> buttons look unclickable by adding
+        the <code>.disabled</code> class
+      button_sizes: >
+        Fancy larger or smaller buttons?
+        Add <code>.btn-large</code>, <code>.btn-small</code>, or
+        <code>.btn-mini</code> for additional sizes.

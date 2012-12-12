@@ -9,23 +9,6 @@ body {
   margin: 0 auto;
 }
 
-.style-guide-section {
-  padding-top: 30px;
-  background-color: white;
-  margin: 10px 0;
-  padding: 10px;
-}
-
-.style-guide-section-header {
-  font-weight:100;
-  color: #888;
-  font-size: 24px;
-  line-height: 40px;
-  margin-top: 0;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #ddd;
-}
-
 @media (min-width: 480px) {
   .style-guide-content .style-guide-sidebar {
     width: 288px;

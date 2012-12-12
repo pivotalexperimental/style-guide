@@ -4,7 +4,7 @@ describe StyleGuide::Config do
   describe "#partial_paths" do
     context "when no paths have been added" do
       it { should have(1).partial_path }
-      its(:partial_paths) { should == [StyleGuide::Engine.root.join("app/views/style_guide/partials")] }
+      its(:partial_paths) { should == [StyleGuide::Engine.root.join("app/views/style_guide/bootstrap_base_css")] }
     end
 
     context "after a path has been added" do

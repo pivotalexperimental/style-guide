@@ -7,13 +7,7 @@
 
   <div class="style-guide-sections">
     <% @active.partials.each do |partial| %>
-      <div class="style-guide-section" id="<%= partial.id %>">
-        <div class="style-guide-section-header"><%= partial.title %></div>
-        <div class="style-guide-partial">
-          <%= render :file => partial.path %>
-        </div>
-        <pre class="style-guide-partial-source prettyprint"><%= partial.content %></pre>
-      </div>
+      <%= render :partial => "example", :locals => { :partial => partial } %>
     <% end %>
   </div>
 </div>

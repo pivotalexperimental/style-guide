@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     style-guide (0.2.1)
+      i18n
       jquery-rails
       rails
 
