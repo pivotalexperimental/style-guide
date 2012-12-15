@@ -58,12 +58,18 @@
 }
 
 .style-guide-partial .style-guide-example-source {
+  white-space: pre;
+  word-wrap: normal;
   margin-top: 0;
-  padding: 10px 20px;
+  padding: 10px 10px 10px 14px;
   background: #f5f5f5;
   border-color: #ddd;
-  overflow-x: scroll;
+  overflow-x: auto;
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
           border-radius: 0;
+}
+
+.style-guide-example-source {
+
 }

@@ -1,34 +1,45 @@
 en:
   style_guide:
-    bootstrap_base:
-      button_disabled_anchor: >
+    buttons:
+      disabled_anchor: >
         Make <code>&lt;a&gt;</code> buttons look unclickable by adding
         the <code>.disabled</code> class
-      button_disabled_element: >
+      disabled_element: >
         Make <code>&lt;button&gt;</code> buttons look unclickable by adding
         the <code>.disabled</code> class
-      button_sizes: >
+      sizes: >
         Fancy larger or smaller buttons?
         Add <code>.btn-large</code>, <code>.btn-small</code>, or
         <code>.btn-mini</code> for additional sizes.
-      button_types: >
-        Need different buttons for different occasions?  Add a class!
-      code_inline: >
-        Use <code>&lt;code&gt;</code> for inline snippets of code.
-      code_blocks: >
-        Use <code>&lt;pre&gt;</code> for multiple lines of code.
-        Be sure to escape any angle brackets in the code for proper rendering.
-      forms_default_styles: >
+      types: >
+        Need different buttons for different occasions?  Add some class!
+
+    forms:
+      # controls
+      controls_checkbox_and_radio: >
+        Checkboxes are for selecting one or several options in a list while
+        radios are for selecting one option from many.
+        Add the <code>.inline</code> class to a series of checkboxes or radios
+        for controls to appear on the same line.
+      controls_input: >
+        Most common form control, text-based input fields.
+        Includes support for all HTML5 types:
+        text, password, datetime, datetime-local, date, month, time, week,
+        number, email, url, search, tel, and color.
+        Requires the use of a specified <code>type</code> at all times.
+      controls_select: >
+        Use the default option or specify a <code>multiple="multiple"</code>
+        to show multiple options at once.
+      controls_textarea: >
+        Form control which supports multiple lines of text.
+        Change <code>rows</code> attribute as necessary.
+
+      # layouts
+      default_styles: >
         Individual form controls receive styling, but without any required base
         class on the <code>&lt;form&gt;</code> or large changes in markup.
         Results in stacked, left-aligned labels on top of form controls.
-      forms_search: >
-        Add <code>.form-search</code> to the form and <code>.search-query</code>
-        to the <code>&lt;input&gt;</code> for an extra-rounded text input.
-      forms_inline: >
-        Add <code>.form-inline</code> for left-aligned labels and inline-block
-        controls for a compact layout.
-      forms_horizontal: >
+      horizontal: >
         Right align labels and float them to the left to make them appear on
         the same line as controls.
         Requires the most markup changes from a default form:
@@ -38,20 +49,61 @@ en:
           <li>Add <code>.control-label</code> to the label</li>
           <li>Wrap any associated controls in <code>.controls</code> for proper alignment</li>
         </ul>
-      form_controls_input: >
-        Most common form control, text-based input fields.
-        Includes support for all HTML5 types:
-        text, password, datetime, datetime-local, date, month, time, week,
-        number, email, url, search, tel, and color.
-        Requires the use of a specified <code>type</code> at all times.
-      form_controls_textarea: >
-        Form control which supports multiple lines of text.
-        Change <code>rows</code> attribute as necessary.
-      form_controls_checkbox_and_radio: >
-        Checkboxes are for selecting one or several options in a list while
-        radios are for selecting one option from many.
-        Add the <code>.inline</code> class to a series of checkboxes or radios
-        for controls to appear on the same line.
-      form_controls_select: >
-        Use the default option or specify a <code>multiple="multiple"</code>
-        to show multiple options at once.
+      inline: >
+        Add <code>.form-inline</code> for left-aligned labels and inline-block
+        controls for a compact layout.
+      search: >
+        Add <code>.form-search</code> to the form and <code>.search-query</code>
+        to the <code>&lt;input&gt;</code> for an extra-rounded text input.
+
+    images:
+      dropdown_icons: Dropdown in a button group.
+      form_fields: Icons in a form field.
+      icon_buttons: Button group in a button toolbar.
+      small_button: Small button with an icon.
+      placeholders: Default shapes for placeholder images.
+      navigation: Icons inside of navigation lists.
+
+    tables:
+      default_style: >
+        For basic styling&mdash;light padding and only horizontal
+        dividers&mdash;add the base class <code>.table</code> to
+        any <code>&lt;table&gt;</code>.
+      striped: >
+        <code>.table-striped</code>
+        adds zebra-striping to any table row within the
+        <code>&lt;tbody&gt;</code> via the <code>:nth-child</code> CSS selector
+        (not available in IE7-IE8).
+      bordered: >
+        <code>.table-bordered</code>
+        adds borders and rounded corners to the table.
+      hover: >
+        <code>.table-hover</code>
+        enables a hover state on table rows within a <code>&lt;tbody&gt;</code>.
+      condensed: >
+        <code>.table-condensed</code>
+        makes tables more compact by cutting cell padding in half.
+      row_classes: >
+        Use contextual classes to color table rows.
+
+    typography:
+      body_copy: >
+        Bootstrap's global default <code>font-size</code> is
+        <strong>14px</strong>, with a <code>line-height</code> of
+        <strong>20px</strong>. This is applied to the <code>&lt;body&gt;</code>
+        and all paragraphs. In addition, <code>&lt;p&gt;</code> (paragraphs)
+        receive a bottom margin of half their line-height (10px by default).
+        Make a paragraph stand out by adding <code>.lead</code>.
+
+      headings: >
+        All HTML headings, <code>&lt;h1&gt;</code> through
+        <code>&lt;h6&gt;</code> are available.
+
+      code_inline: >
+        Use <code>&lt;code&gt;</code> for inline snippets of code.
+      code_blocks: >
+        Use <code>&lt;pre&gt;</code> for multiple lines of code.
+        Be sure to escape any angle brackets in the code for proper rendering.
+            images_placeholders: >
+        Add classes to an <code>&lt;img&gt;</code> element to easily
+        style images in any project.
