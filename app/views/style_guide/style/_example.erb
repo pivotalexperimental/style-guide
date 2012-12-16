@@ -1,10 +1,10 @@
 <div class="style-guide-partial" id="<%= partial.id %>">
   <div class="style-guide-example-header"><%= partial.title %></div>
+  <% if partial.description %>
   <div class="style-guide-example-description">
-    <%= t(partial.id, :scope => [:style_guide, @active.id.to_sym]).html_safe %>
+      <%= partial.description.html_safe %>
   </div>
-  <div class="style-guide-example">
-    <%= render :file => partial.path %>
-  </div>
+  <% end %>
+  <div class="style-guide-example"><%= render :file => partial.path %></div>
   <pre class="style-guide-example-source prettyprint linenums"><%= partial.content %></pre>
 </div>

@@ -2,7 +2,8 @@ require "spec_helper"
 
 describe StyleGuide::Partial do
   let(:path) { "/hygenic/_gargling.erb" }
-  let(:partial) { StyleGuide::Partial.new(path) }
+  let(:section) { StyleGuide::Section.new("/flaky/gangrene") }
+  let(:partial) { StyleGuide::Partial.new(path, section) }
 
   describe "#title" do
     subject { partial.title }
@@ -50,5 +51,21 @@ describe StyleGuide::Partial do
     subject { partial.content }
 
     it { should == "reading is for chumps" }
+  end
+
+  describe "#description" do
+    subject { partial.description }
+
+    context "when no translation string exists" do
+      before { I18n.stub(:translate => nil) }
+
+      it { should be_nil }
+    end
+
+    context "when there is a translation string available" do
+      before { I18n.stub(:translate => "pants") }
+
+      it { should == "pants" }
+    end
   end
 end

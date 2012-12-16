@@ -1,9 +1,10 @@
 module StyleGuide
   class Partial
-    attr_reader :path
+    attr_reader :path, :section
 
-    def initialize(path)
+    def initialize(path, section)
       @path = path
+      @section = section
     end
 
     def id
@@ -16,6 +17,12 @@ module StyleGuide
 
     def content
       @content || File.read(path)
+    end
+
+    def description
+      I18n.translate!(id, :scope => [:style_guide, section.id.to_sym])
+    rescue I18n::MissingTranslationData
+      nil
     end
   end
 end
