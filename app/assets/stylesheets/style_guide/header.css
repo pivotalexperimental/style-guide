@@ -1,5 +1,5 @@
 .style-guide-header {
-  padding: 60px 0 40px 0;
+  padding: 40px 0 25px 0;
   color: white;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.3), 0 0 20px rgba(0,0,0,.075);
@@ -11,7 +11,7 @@
 }
 
 .style-guide-header h1 {
-  font-size: 60px;
+  font-size: 50px;
   font-weight: bold;
   letter-spacing: -1px;
   line-height: 1;
@@ -19,8 +19,14 @@
 }
 
 @media (min-width: 480px) {
+  .style-guide-header {
+    padding: 60px 0 40px 0;
+  }
+
   .style-guide-header h1 {
+    font-size: 60px;
     text-align: left;
+    text-indent: 10px;
   }
 }
 

@@ -42,9 +42,14 @@
   color: #888;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 720px) {
   .style-guide-sidebar ul {
     margin: 10px;
+  }
+}
+
+@media (min-width: 960px) {
+  .style-guide-sidebar ul {
     margin-left: 0;
   }
 }
