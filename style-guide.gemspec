@@ -18,8 +18,6 @@ Gem::Specification.new do |s|
   s.add_dependency "jquery-rails", "~> 2.1"
   s.add_dependency "nokogiri", "~> 1.5"
 
-  s.add_development_dependency "therubyracer"
-
   s.add_development_dependency "foreman"
   s.add_development_dependency "rb-fsevent"
   s.add_development_dependency "rspec-rails"
