@@ -5,6 +5,7 @@ env:
   global:
     secure: "bQg1DmRx33r7EQTMcZlgc0F9o7q0puzF2ErTOQoZgZQCq5FHhKRwR+lHXmmb\ncolCx2CPrgGa9LT1pLNxApdZVhxLHMUa8Cd7vieem1Spr83km5VRx1CAIFLz\nOztkyIOpQ48ofbr5sJzP8tdV3pNRnFolCi68sbNKbFxIeXp2Zk0="
 after_script:
+  - bundle install
   - gem install heroku
   - git remote add heroku git@heroku.com:swivel.git
   - echo "Host heroku.com" >> ~/.ssh/config
