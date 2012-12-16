@@ -20,41 +20,58 @@
   color: #5D5C5C;
 }
 
+.style-guide-identifiers code,
 .style-guide-example-description code {
-  white-space: nowrap;
   color: #d14;
   background-color: #f5f5f5;
-  padding: 2px 4px;
+  padding: 0 4px;
   border: 1px solid #ddd;
   font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+  white-space: nowrap;
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
           border-radius: 0;
 }
 
-.style-guide-example {
+.style-guide-example,
+.style-guide-identifiers {
   position: relative;
   padding: 10px 20px;
   padding-top: 32px;
+  overflow: hidden;
+
   background-color: #fff;
   border: 1px solid #f5f5f5;
-  overflow: hidden;
 }
 
-.style-guide-example:after {
-  content: "Example";
+.style-guide-example + .style-guide-identifiers {
+  border-top-width: 0;
+}
+
+.style-guide-example:after,
+.style-guide-identifiers:after {
   position: absolute;
   top: -1px;
   left: -1px;
   padding: 0 5px;
+
+  border: 1px solid #ddd;
+
   font-size: 11px;
   line-height: 18px;
   height: 18px;
   font-weight: 100;
   background-color: #f5f5f5;
-  border: 1px solid #ddd;
   color: #888;
   opacity: 0.75;
+}
+
+.style-guide-example:after {
+  content: "Example";
+}
+
+.style-guide-identifiers:after {
+  content: "Identifiers";
 }
 
 .style-guide-partial .style-guide-example-source {
@@ -68,8 +85,4 @@
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
           border-radius: 0;
-}
-
-.style-guide-example-source {
-
 }

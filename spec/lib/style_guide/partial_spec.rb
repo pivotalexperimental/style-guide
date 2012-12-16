@@ -68,4 +68,35 @@ describe StyleGuide::Partial do
       it { should == "pants" }
     end
   end
+
+  describe "#classes" do
+    let(:content) { %(<div class="noseclip"><img class="earplug noseclip"></div>) }
+
+    before { File.stub(:read => content) }
+
+    subject { partial.classes }
+
+    it { should =~ %w(.noseclip .earplug) }
+  end
+
+  describe "#ids" do
+    let(:content) { %(<div id="stent"><img id="cholesterol"></div>) }
+
+    before { File.stub(:read => content) }
+
+    subject { partial.ids }
+
+    it { should =~ %w(#cholesterol #stent) }
+  end
+
+  describe "#identifiers" do
+    before do
+      partial.stub(:classes => %w(.puppies .rainbows))
+      partial.stub(:ids => %w(#ice-cream #lollipops))
+    end
+
+    subject { partial.identifiers }
+
+    it { should =~ %w(.puppies .rainbows #ice-cream #lollipops) }
+  end
 end

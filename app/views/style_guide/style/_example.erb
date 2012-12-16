@@ -6,5 +6,12 @@
   </div>
   <% end %>
   <div class="style-guide-example"><%= render :file => partial.path %></div>
+  <% if partial.identifiers.any? %>
+    <div class="style-guide-identifiers">
+      <% partial.identifiers.each do |identifier_name| %>
+        <code><%= identifier_name %></code>
+      <% end %>
+    </div>
+  <% end %>
   <pre class="style-guide-example-source prettyprint linenums"><%= partial.content %></pre>
 </div>

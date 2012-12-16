@@ -1,3 +1,5 @@
+require "nokogiri"
+
 module StyleGuide
   class Partial
     attr_reader :path, :section
@@ -16,13 +18,41 @@ module StyleGuide
     end
 
     def content
-      @content || File.read(path)
+      @content ||= File.read(path)
     end
 
     def description
-      I18n.translate!(id, :scope => [:style_guide, section.id.to_sym])
-    rescue I18n::MissingTranslationData
-      nil
+      @description ||= begin
+        I18n.translate!(id, :scope => [:style_guide, section.id.to_sym])
+      rescue I18n::MissingTranslationData
+        nil
+      end
+    end
+
+    def classes
+      @classes ||= begin
+        parsed.css("[class]").reduce({}) do |output, tag|
+          output.tap do |tags|
+            tag["class"].split.each do |class_name|
+              tags[".#{class_name}"] = true
+            end
+          end
+        end.keys
+      end
+    end
+
+    def ids
+      @ids ||= parsed.css("[id]").map { |tag| %(##{tag["id"]}) }
+    end
+
+    def identifiers
+      ids + classes
+    end
+
+    private
+
+    def parsed
+      @parsed ||= Nokogiri::HTML.parse(content)
     end
   end
 end
