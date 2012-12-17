@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.summary     = "A live style guide for your application."
   s.description = "Inspired by the Bootstrap guide, style-guide is an engine that lets you see all your styles applied live."
 
-  s.files         = `git ls-files`.split( "\n" )
+  s.files         = `git ls-files`.split( "\n" ) - %w(Gemfile.lock)
   s.test_files    = `git ls-files -- spec/*`.split( "\n" )
   s.require_paths = ['lib']
 
