@@ -85,3 +85,13 @@
      -moz-border-radius: 0;
           border-radius: 0;
 }
+
+.style-guide-example-source {
+  display: none;
+}
+
+@media (min-width: 720px) {
+  .style-guide-example-source {
+    display: block;
+  }
+}
