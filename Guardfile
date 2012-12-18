@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+interactor :off
+
 guard 'bundler' do
   watch('Gemfile')
   watch(/^.+\.gemspec/)

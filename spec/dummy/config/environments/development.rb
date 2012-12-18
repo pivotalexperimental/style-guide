@@ -1,3 +1,5 @@
+require "rack/livereload"
+
 Dummy::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -27,4 +29,6 @@ Dummy::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.middleware.insert_before(::Rack::Lock, ::Rack::LiveReload, :min_delay => 500)
 end
