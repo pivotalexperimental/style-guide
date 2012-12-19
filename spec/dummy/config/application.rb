@@ -6,7 +6,7 @@ require "action_mailer/railtie"
 require "active_resource/railtie"
 require "sprockets/railtie"
 
-Bundler.require
+Bundler.require :default, Rails.env
 require "style_guide"
 
 module Dummy
