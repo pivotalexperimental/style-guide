@@ -7,8 +7,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Doc Ritezel"]
   s.email       = ["doc@pivotallabs.com"]
   s.homepage    = "https://github.com/pivotal/style-guide"
-  s.summary     = "A live style guide for your application."
-  s.description = "Inspired by the Bootstrap guide, style-guide is an engine that lets you see all your styles applied live."
+  s.summary     = "A live style guide for your Rails application."
+  s.description = "Inspired by the Bootstrap guide, style-guide is a Rails engine that lets you see all your styles applied in front of your eyes."
 
   s.files         = `git ls-files`.split( "\n" ) - %w(Gemfile.lock)
   s.test_files    = `git ls-files -- spec/*`.split( "\n" )

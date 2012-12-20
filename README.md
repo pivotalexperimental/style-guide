@@ -1,31 +1,84 @@
-# StyleGuide
+# Style Guide
 
 [![Build Status](https://secure.travis-ci.org/pivotalexperimental/style-guide.png?branch=master)](https://travis-ci.org/pivotalexperimental/style-guide) [![Dependency Status](https://gemnasium.com/pivotalexperimental/style-guide.png)](https://gemnasium.com/pivotalexperimental/style-guide) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/pivotalexperimental/style-guide)
 
-Quickly see the styled output of your application.
+Style Guide was born out of a need to quickly audit the CSS applied to
+visual elements and iterate on them in a controlled environment.  It is
+implemented as a Rails engine in order to stay close to the application being
+styled.
 
-## Example
+When used with [guard-livereload](https://github.com/guard/guard-livereload),
+Style Guide automatically reloads itself when you make changes to the CSS,
+Javascript or HTML in your site.
 
-The canonical deployed instance is located at [http://swivel.herokuapp.com](http://swivel.herokuapp.com)
 
 ## Usage
 
-First, require the StyleGuide gem in your application.rb file:
+First, require the StyleGuide gem in `application.rb`:
 
-    Bundler.require
     require "style_guide"
 
-Next, mount the StyleGuide application in your `routes.rb` file:
 
-    mount StyleGuide::Engine => "/style-guide"
-
-By default, StyleGuide will attempt to load directories full of partials and render them at its mounted path.  Here's how to add your own directory full of partials:
+Then, append a directory of partials in `application.rb`:
 
     config.style_guide.partial_paths << Rails.root.join("app/views/styles")
 
-You could, however, just display only your partials (note the assignment):
 
-    config.style_guide.partial_paths = [Rails.root.join("app/views/styles")]
+Next, mount the StyleGuide application in `routes.rb`:
+
+    mount StyleGuide::Engine => "/style-guide" unless Rails.env.production?
+
+
+Finally, add `Rack::LiveReload` to `environments/development.rb`:
+
+    config.middleware.insert_before(::Rack::Lock, ::Rack::LiveReload)
+
+
+## Enhancing Your Experience
+
+Running [Guard](https://github.com/guard/guard) is highly recommended:
+
+    $ guard init
+    INFO - livereload guard added to Guardfile, feel free to edit it
+    $ guard
+    INFO - LiveReload is waiting for a browser to connect.
+
+Using [Foreman](https://github.com/ddollar/foreman) to manage the startup of
+both your Rails app and Guard is an excellent idea.
+
+First, turn off the Guard interactor so that it doesn't try to block output.
+Add this line to the top of your `Guardfile`:
+
+    interactor :off
+
+Then add the following lines to `Procfile`, located in the root of your app:
+
+    web: bundle exec rails s
+    guard: bundle exec guard
+
+
+## Best Practices
+
+* Do not attempt to do layout in the Style Guide.  Attempting to make it lay
+  out your pages will lead you down the road of madness.
+
+* The canonical installation of Style Guide pulls in all of the
+  directories under `app/views/style_guide`, like so:
+
+      config.style_guide.partial_paths << Rails.root.join("app/views/style_guide/*")
+
+* From here, the Style Guide is broken down into sections,
+  like "Buttons", "Forms" and "Typography".
+
+* You should only use static content in the partials you render
+  to the Style Guide.
+
+
+## Example
+
+You can see an example of Style Guide at swivel's automatically-deployed
+testing instance: [http://swivel.herokuapp.com](http://swivel.herokuapp.com)
+
 
 ## License
 
