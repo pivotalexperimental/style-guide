@@ -1,6 +1,6 @@
 (function($) {
   $(function(){
-    $(".style-guide-example [href^=#]").click(function(e) {
+    $(".style-guide-partial [href^=#], .style-guide-partial-source").click(function(e) {
       e.preventDefault();
     });
     window.prettyPrint && prettyPrint();
