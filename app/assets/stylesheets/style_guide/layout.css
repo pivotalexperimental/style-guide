@@ -23,9 +23,10 @@ body {
     position: absolute;
   }
 
-  .style-guide-sidebar.style-guide-fixed {
+  .style-guide-content .style-guide-sidebar.style-guide-fixed {
     position: fixed;
     top: 0;
+    width: 144px;
   }
 
   .style-guide-content .style-guide-partials {
@@ -45,6 +46,10 @@ body {
     margin-left: 26%;
     float: left;
   }
+
+  .style-guide-content .style-guide-sidebar.style-guide-fixed {
+    width: 210px;
+  }
 }
 
 @media (min-width: 960px) {
@@ -60,5 +65,9 @@ body {
     width: 69%;
     margin-left: 31%;
     float: left;
+  }
+
+  .style-guide-content .style-guide-sidebar.style-guide-fixed {
+    width: 288px;
   }
 }
