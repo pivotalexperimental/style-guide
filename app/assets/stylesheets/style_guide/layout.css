@@ -16,7 +16,7 @@ body {
    }
 
   .style-guide-content .style-guide-sidebar {
-    width: 190px;
+    width: 20%;
   }
 
   .style-guide-content .style-guide-sidebar {
@@ -28,21 +28,21 @@ body {
     top: 0;
   }
 
-  .style-guide-content .style-guide-sections {
-    width: 522px;
-    margin-left: 190px;
+  .style-guide-content .style-guide-partials {
+    width: 79%;
+    margin-left: 21%;
     float: left;
   }
 }
 
 @media (min-width: 840px) {
   .style-guide-content .style-guide-sidebar {
-    width: 239px;
+    width: 25%;
   }
 
-  .style-guide-content .style-guide-sections {
-    width: 601px;
-    margin-left: 239px;
+  .style-guide-content .style-guide-partials {
+    width: 74%;
+    margin-left: 26%;
     float: left;
   }
 }
@@ -53,12 +53,12 @@ body {
   }
 
   .style-guide-content .style-guide-sidebar {
-    width: 288px;
+    width: 30%;
   }
 
-  .style-guide-content .style-guide-sections {
-    width: 672px;
-    margin-left: 288px;
+  .style-guide-content .style-guide-partials {
+    width: 69%;
+    margin-left: 31%;
     float: left;
   }
 }

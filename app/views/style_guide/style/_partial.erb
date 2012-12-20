@@ -1,0 +1,25 @@
+<div class="style-guide-partial" id="<%= partial.id %>">
+  <div class="style-guide-partial-title">
+    <%= partial.title %>
+  </div>
+
+  <% if partial.description %>
+    <div class="style-guide-partial-description">
+      <%= partial.description.html_safe %>
+    </div>
+  <% end %>
+
+  <div class="style-guide-partial-rendered">
+    <%= render :file => partial.path %>
+  </div>
+
+  <% if partial.identifiers.any? %>
+    <div class="style-guide-partial-identifiers">
+      <% partial.identifiers.each do |identifier_name| %>
+        <code><%= identifier_name %></code>
+      <% end %>
+    </div>
+  <% end %>
+
+  <pre class="style-guide-partial-source prettyprint linenums"><%= partial.content %></pre>
+</div>

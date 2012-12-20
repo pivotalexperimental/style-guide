@@ -19,7 +19,7 @@
         <input id="style-guide-checkbox" type="checkbox" />
         <ul>
         <% @sections.each_with_index do |section, index| %>
-          <li<%= (section == @active) ? ' class="active"'.html_safe : '' %>>
+          <li<%= (section == @current_section) ? ' class="active"'.html_safe : '' %>>
             <a href="<%= style_path(section.id) %>"><%= section.title %></a>
           </li>
         <% end %>

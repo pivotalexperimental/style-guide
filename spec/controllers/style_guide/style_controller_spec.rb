@@ -17,10 +17,10 @@ describe StyleGuide::StyleController do
       assigns(:sections).first.should be_a StyleGuide::Section
     end
 
-    it "sets the active section to the first one" do
+    it "sets the current section to the first one" do
       get :index, use_route: :styles
-      assigns(:active).should == assigns(:sections).first
-      assigns(:active).title.should == "Monkey Hammer"
+      assigns(:current_section).should == assigns(:sections).first
+      assigns(:current_section).title.should == "Monkey Hammer"
     end
   end
 
@@ -36,8 +36,8 @@ describe StyleGuide::StyleController do
 
     it "assigns the section" do
       get :show, id: fake_section.id, use_route: :styles
-      assigns(:active).should be_a StyleGuide::Section
-      assigns(:active).title.should == "Monkey Hammer"
+      assigns(:current_section).should be_a StyleGuide::Section
+      assigns(:current_section).title.should == "Monkey Hammer"
     end
   end
 end

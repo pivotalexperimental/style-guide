@@ -1,7 +1,10 @@
 <div class="style-guide-sidebar">
-  <ul>
-  <% @active.partials.each do |partial| %>
-    <li><a href="#<%= partial.id %>"><i>&rsaquo;</i> <%= partial.title %></a></li>
+  <% section.partials.each do |partial| %>
+  <div class="style-guide-sidebar-partial">
+    <a href="#<%= partial.id %>">
+      <i>&rsaquo;</i>
+      <%= partial.title %>
+    </a>
+  </div>
   <% end %>
-  </ul>
 </div>
