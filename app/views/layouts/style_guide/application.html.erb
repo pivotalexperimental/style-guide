@@ -17,13 +17,13 @@
         <label for="style-guide-checkbox">Sections</label>
         <a class="brand" href="/">Style Guide</a>
         <input id="style-guide-checkbox" type="checkbox" />
-        <ul>
+        <div class="style-guide-bar-sections">
         <% @sections.each_with_index do |section, index| %>
-          <li<%= (section == @current_section) ? ' class="active"'.html_safe : '' %>>
+          <div class="style-guide-bar-section <%= (section == @current_section) ? 'active'.html_safe : '' %>">
             <a href="<%= style_path(section.id) %>"><%= section.title %></a>
-          </li>
+          </div>
         <% end %>
-        </ul>
+        </div>
       </div>
     </div>
 
