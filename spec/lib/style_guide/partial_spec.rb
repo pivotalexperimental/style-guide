@@ -63,9 +63,25 @@ describe StyleGuide::Partial do
     end
 
     context "when there is a translation string available" do
-      before { I18n.stub(:translate => "pants") }
+      let(:translated) { "pants" }
 
-      it { should == "pants" }
+      before { I18n.stub(:translate => translated) }
+
+      it { should include "<p>pants" }
+
+      context "when the translated string includes html" do
+        let(:translated) { '`<br>`' }
+
+        it { should include '&lt;br&gt;' }
+      end
+
+      context "when the translated string includes markdown" do
+        let(:translated) { "`meat` *beans* __socks__" }
+
+        it { should include "<code>meat" }
+        it { should include "<em>beans" }
+        it { should include "<strong>socks" }
+      end
     end
   end
 

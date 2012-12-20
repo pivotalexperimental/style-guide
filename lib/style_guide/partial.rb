@@ -1,4 +1,5 @@
 require "nokogiri"
+require "github/markdown"
 
 module StyleGuide
   class Partial
@@ -22,11 +23,7 @@ module StyleGuide
     end
 
     def description
-      @description ||= begin
-        I18n.translate!(id, :scope => [:style_guide, section.id.to_sym])
-      rescue I18n::MissingTranslationData
-        nil
-      end
+      @description ||= GitHub::Markdown.render_gfm(translated_description)
     end
 
     def classes
@@ -50,6 +47,16 @@ module StyleGuide
     end
 
     private
+
+    def style_guide_scope
+      [:style_guide, section.id.to_sym]
+    end
+
+    def translated_description
+      I18n.translate!(id, :scope => style_guide_scope)
+    rescue I18n::MissingTranslationData
+      nil
+    end
 
     def parsed
       @parsed ||= Nokogiri::HTML.parse(content)
