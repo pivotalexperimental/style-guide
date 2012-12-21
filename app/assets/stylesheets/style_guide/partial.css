@@ -111,16 +111,16 @@ pre.style-guide-partial-source {
   display: none;
 }
 
-.style-guide-partial input[type=checkbox] {
+.style-guide-partial > input[type=checkbox] {
   display: none;
 }
 
-input:checked + label .style-guide-toggle.show {
+.style-guide-partial > input:checked + label .style-guide-toggle.show {
   display: none;
 }
 
-input:checked + label .style-guide-toggle.hide,
-input:checked + label .style-guide-partial-source {
+.style-guide-partial > input:checked + label .style-guide-toggle.hide,
+.style-guide-partial > input:checked + label .style-guide-partial-source {
   display: block;
 }
 
