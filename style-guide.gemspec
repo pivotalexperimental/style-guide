@@ -7,8 +7,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Doc Ritezel"]
   s.email       = ["doc@pivotallabs.com"]
   s.homepage    = "https://github.com/pivotal/style-guide"
-  s.summary     = "A live style guide for your Rails application."
-  s.description = "Inspired by the Bootstrap guide, style-guide is a Rails engine that lets you see all your styles applied in front of your eyes."
+  s.summary     = "A style guide for your Rails application."
+  s.description = "A mountable Rails engine where you curate and view your site's visual elements."
 
   s.files         = `git ls-files`.split( "\n" ) - %w(Gemfile.lock)
   s.test_files    = `git ls-files -- spec/*`.split( "\n" )
@@ -19,12 +19,14 @@ Gem::Specification.new do |s|
   s.add_dependency "nokogiri", "~> 1.5"
   s.add_dependency "github-markdown", "~> 0.5"
 
+  # super-relevant in development, but super-irrelevant in staging
+  s.add_development_dependency "rack-livereload"
+  s.add_development_dependency "guard-livereload"
+
   s.add_development_dependency "foreman"
   s.add_development_dependency "rb-fsevent"
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "guard-rspec"
   s.add_development_dependency "guard-bundler"
-  s.add_development_dependency "rack-livereload"
-  s.add_development_dependency "guard-livereload"
   s.add_development_dependency "terminal-notifier-guard"
 end
