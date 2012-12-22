@@ -1,15 +1,9 @@
 Style Guide [![Build Status](https://secure.travis-ci.org/pivotalexperimental/style-guide.png?branch=master)](https://travis-ci.org/pivotalexperimental/style-guide) [![Dependency Status](https://gemnasium.com/pivotalexperimental/style-guide.png)](https://gemnasium.com/pivotalexperimental/style-guide) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/pivotalexperimental/style-guide)
 ===
 
-Style Guide was born out of a need to quickly audit the CSS applied to
-visual elements and iterate on them in a controlled environment.  It is
-implemented as a Rails engine in order to stay close to the application being
-styled.
+Style Guide is a mountable Rails engine where you curate and view your site's visual elements.
 
-When used with [guard-livereload](https://github.com/guard/guard-livereload),
-Style Guide automatically reloads itself when you make changes to the CSS,
-Javascript or HTML in your site.
-
+Tutorials on important topics, such as creating your own Style Guide sections, writing documentation for visual elements  and more can be found in the [Style Guide wiki](https://github.com/pivotalexperimental/style-guide/wiki).
 
 ## Usage
 
