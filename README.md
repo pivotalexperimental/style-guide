@@ -60,61 +60,6 @@ The generator will install [guard-livereload](https://github.com/guard/guard-liv
 Consult the [Style Guide wiki](https://github.com/pivotalexperimental/style-guide/wiki) for more information about what the generator does.
 
 
-Workflow
---------
-
-Style Guide comes prepackaged with the Bootstrap Base CSS elements.  Naturally, you'll want to add your own sections, starting with Branding.
-
-1. Go to your application directory.
-1. Start your Rails server:
-
-    ```bash
-    $ rails s
-    ```
-
-1. Start Guard:
-
-    ```bash
-    $ guard
-    ```
-
-1. Open your Rails app's Style Guide: [http://localhost:3000/style-guide](http://localhost:3000/style-guide)
-1. Create a directory in your Rails app called `app/views/style_guide`.
-1. Create a directory called `app/views/style_guide/branding`.
-1. Browse to the [Branding](http://localhost:3000/style-guide/branding) section.
-1. Create a new file called `app/views/style_guide/branding/_colors.erb` containing:
-    
-    ```html
-    <div class="branding-color-swatches">
-      <div class="primary">Primary</div>
-      <div class="secondary">Secondary</div>
-      <div class="accent">Accent</div>
-    </div>
-    ```
-
-1. Create a new file called `app/assets/stylesheets/_variables.scss` containing:
-
-    ```scss
-    $brandPrimary: #B90020;
-    $brandSecondary: #6D99D3;
-    $brandAccent: #C59E16;
-    ```
-
-1. Create a new directory called `app/assets/stylesheets/branding`.
-1. Create a new file called `app/assets/stylesheets/branding/colors.css.scss` containing:
-
-    ```scss
-    @import "variables";
-    .branding-color-swatches {
-        .primary { background-color: $brandPrimary; }
-        .secondary { background-color: $brandSecondary; }
-        .accent { background-color: $brandAccent; }
-    }
-    ```
-
-The likelihood of your ever using these swatch classes in a production application is very slight, but now you have some nice swatches.
-
-
 Contributing
 ------------
 
@@ -136,6 +81,7 @@ Contributors
 
 * Rob Head
 * Can Berk Güder
+* Dennis Schmidt
 
 
 Special Thanks
