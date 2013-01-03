@@ -15,22 +15,6 @@ module StyleGuide
     end
 
     no_tasks do
-      #begin https://github.com/rails/rails/blob/railties/lib/rails/generators/app_base.rb
-      def bundle_command(command)
-        say_status :run, "bundle #{command}"
-
-        Dir.chdir(Rails.root) do
-          oldrubyopt = ENV["RUBYOPT"]
-          ENV["RUBYOPT"] = nil
-          system("#{Gem.bin_path('bundler', 'bundle')} #{command}")
-          ENV["RUBYOPT"] = oldrubyopt
-        end
-        # inside Rails.root do
-        #   system %("#{Gem.ruby}" -rubygems "#{Gem.bin_path('bundler', 'bundle')}" #{command})
-        # end
-      end
-      #end
-
       def guardfile
         @guardfile ||= if File.exists?(guardfile_path)
           File.open(guardfile_path).read
@@ -55,7 +39,6 @@ module StyleGuide
     end
 
     private
-
     def guardfile_path
       Rails.root.join("Guardfile")
     end
@@ -84,6 +67,17 @@ module StyleGuide
     rescue NameError
       gem "guard-livereload", :group => "development"
       nil
+    end
+
+    def bundle_command(command)
+      say_status :run, "bundle #{command}"
+
+      Dir.chdir(Rails.root) do
+        oldrubyopt = ENV["RUBYOPT"]
+        ENV["RUBYOPT"] = nil
+        system("#{Gem.bin_path('bundler', 'bundle')} #{command}")
+        ENV["RUBYOPT"] = oldrubyopt
+      end
     end
 
     def configure_guard_livereload
