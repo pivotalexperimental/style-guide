@@ -20,7 +20,7 @@ module StyleGuide
     end
 
     def content
-      Tilt.new(path).render.gsub(/\</, "&lt;").gsub(/\>/, "&gt;").html_safe
+      rendered.gsub(/\</, "&lt;").gsub(/\>/, "&gt;").html_safe
     end
 
     def description
@@ -49,6 +49,10 @@ module StyleGuide
 
     private
 
+    def rendered
+      @rendered ||= Tilt.new(path).render
+    end
+
     def style_guide_scope
       [:style_guide, section.id.to_sym]
     end
@@ -60,7 +64,7 @@ module StyleGuide
     end
 
     def parsed
-      @parsed ||= Nokogiri::HTML.parse(content)
+      @parsed ||= Nokogiri::HTML.parse(rendered)
     end
   end
 end
