@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    style-guide (0.7.0)
+    style-guide (0.7.1)
       github-markdown (~> 0.5)
       jquery-rails (~> 2.1)
       nokogiri (~> 1.5)
