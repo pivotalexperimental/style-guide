@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe StyleGuide::Partial do
   let(:path) { "/hygenic/_gargling.erb" }
-  let(:section) { StyleGuide::Section.new("/flaky/gangrene") }
+  let(:section) { StyleGuide::Section.from_paths("/flaky/gangrene").first }
   let(:partial) { StyleGuide::Partial.new(path, section) }
 
   describe "#title" do

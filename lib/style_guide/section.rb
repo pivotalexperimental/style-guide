@@ -2,14 +2,24 @@ require "style_guide/partial"
 
 module StyleGuide
   class Section
-    attr_reader :path
+    attr_reader :path, :id
 
-    def initialize(path)
-      @path = path
+    def self.id_from_path(path)
+      File.basename(path).downcase.gsub(/[^a-zA-Z0-9]/, " ").strip.gsub(/\s+/, "_")
     end
 
-    def id
-      @id ||= File.basename(path).downcase.gsub(/[^a-zA-Z0-9]/, " ").strip.gsub(/\s+/, "_")
+    def self.from_paths(paths)
+      [*paths].reduce({}) do |sections, path|
+        id = id_from_path(path)
+        section = sections[id] ||= []
+        section << new("#{id}#{section.empty? ? '' : section.count}", path)
+        sections
+      end.values.flatten
+    end
+
+    def initialize(id, path)
+      @id = id
+      @path = path
     end
 
     def title

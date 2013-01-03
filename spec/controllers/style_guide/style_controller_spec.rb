@@ -6,7 +6,7 @@ describe StyleGuide::StyleController do
 
   before do
     FileUtils.mkdir_p(partial_path)
-    StyleGuide::Engine.config.style_guide.stub(:paths => [partial_path])
+    StyleGuide::Engine.config.style_guide.paths = "#{temp_path}/*"
   end
 
   describe "#index" do
@@ -25,17 +25,15 @@ describe StyleGuide::StyleController do
   end
 
   describe "#show" do
-    let(:fake_section) { StyleGuide::Section.new(partial_path) }
-
     it "assigns sections" do
-      get :show, id: fake_section.id, use_route: :styles
+      get :show, id: "monkey_hammer", use_route: :styles
       assigns(:sections).should be
       assigns(:sections).should have(1).section
       assigns(:sections).first.should be_a StyleGuide::Section
     end
 
     it "assigns the section" do
-      get :show, id: fake_section.id, use_route: :styles
+      get :show, id: "monkey_hammer", use_route: :styles
       assigns(:current_section).should be_a StyleGuide::Section
       assigns(:current_section).title.should == "Monkey Hammer"
     end

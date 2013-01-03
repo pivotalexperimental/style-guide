@@ -19,7 +19,7 @@ module StyleGuide
     end
 
     def sections
-      expanded_paths.map { |path| StyleGuide::Section.new(path) }
+      StyleGuide::Section.from_paths(expanded_paths)
     end
 
     private
