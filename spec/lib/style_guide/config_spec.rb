@@ -29,4 +29,49 @@ describe StyleGuide::Config do
       its(:partial_paths) { should include "partials-and-magic-beans" }
     end
   end
+
+  describe "#sections" do
+    context "when no paths have been added" do
+      it { should have_at_least(1).section }
+      its(:'sections.first') { should be_a StyleGuide::Section }
+    end
+
+    context "when adding a nonexistent path" do
+      it "has no impact on the sections" do
+        expect do
+          subject.paths << "disappointment"
+        end.not_to change{ subject.sections.count }
+      end
+    end
+
+    context "when adding a non-globbed path" do
+      let(:path) { StyleGuide::Engine.root.join("app", "views") }
+
+      it "only adds that base path" do
+        expect do
+          subject.paths << path
+        end.to change { subject.sections.count }.by(1)
+      end
+    end
+
+    context "when adding a globbed path" do
+      let(:path) { StyleGuide::Engine.root.join("app", "views", "layouts", "*") }
+
+      it "obeys globbing" do
+        expect do
+          subject.paths << path
+        end.to change { subject.sections.count }.by(1)
+      end
+    end
+
+    context "when adding existing paths" do
+      let(:path) { StyleGuide::Engine.root.join("app", "views", "bootstrap", "**", "*") }
+
+      it "deduplicates existing paths" do
+        expect do
+          subject.paths << path
+        end.not_to change { subject.sections.count }
+      end
+    end
+  end
 end
