@@ -2,16 +2,12 @@ module StyleGuide
   class Config
     attr_reader :partial_paths
 
-    def self.style_guide_views_path
-      StyleGuide::Engine.root.join("app", "views", "style_guide")
-    end
-
-    def self.style_guide_views_directories
-      style_guide_views_path.children.select(&:directory?).reject { |d| d.basename.to_s == "style" }
+    def self.bootstrap_path
+      StyleGuide::Engine.root.join("app", "views", "bootstrap")
     end
 
     def initialize(options = {})
-      @partial_paths = options[:partial_paths] || self.class.style_guide_views_directories
+      @paths = options[:paths] || [self.class.bootstrap_path]
     end
 
     def partial_paths=(paths)
