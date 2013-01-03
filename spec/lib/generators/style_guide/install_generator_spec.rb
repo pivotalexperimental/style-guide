@@ -5,10 +5,10 @@ describe StyleGuide::InstallGenerator do
     before do
       subject.stub(:gem)
       subject.stub(:route)
-      subject.stub(:system)
+      subject.stub(:bundle_command)
       subject.stub(:application)
-      Rack.stub(:const_get)
-      Guard.stub(:const_get)
+      Rack.stub(:const_get).and_return("constant")
+      Guard.stub(:const_get).and_return("constant")
       subject.stub(:routes_rb).and_return("mount StyleGuide::Engine")
       subject.stub(:guardfile).and_return("guard 'livereload'")
       subject.stub(:application_rb).and_return("config.style_guide.partial_paths")
@@ -30,6 +30,11 @@ describe StyleGuide::InstallGenerator do
           subject.should_receive(:gem).with("rack-livereload", anything)
           subject.install
         end
+
+        it "runs bundle install" do
+          subject.should_receive(:bundle_command).with("install")
+          subject.install
+        end
       end
     end
 
@@ -48,13 +53,18 @@ describe StyleGuide::InstallGenerator do
           subject.should_receive(:gem).with("guard-livereload", anything)
           subject.install
         end
+
+        it "runs bundle install" do
+          subject.should_receive(:bundle_command).with("install")
+          subject.install
+        end
       end
     end
 
     describe "guard livereload configuration" do
       context "when guard-livereload is in the Guardfile" do
         it "does not add guard-livereload to the Guardfile" do
-          subject.should_not_receive(:system).with("guard init livereload")
+          subject.should_not_receive(:bundle_command)
           subject.install
         end
       end
@@ -63,7 +73,7 @@ describe StyleGuide::InstallGenerator do
         before { subject.stub(:guardfile).and_return("meat") }
 
         it "adds guard-livereload to the Guardfile" do
-          subject.should_receive(:system).with("guard init livereload")
+          subject.should_receive(:bundle_command).with("exec guard init livereload")
           subject.install
         end
       end
@@ -74,7 +84,11 @@ describe StyleGuide::InstallGenerator do
         before { subject.stub(:application_rb).and_return("") }
 
         it "adds an entry for style guide partial paths" do
-          subject.should_receive(:application).once.with(%(config.style_guide.partial_paths << #{subject.default_partial_path}))
+          subject.should_receive(:application).once do |config, options|
+            options.should == nil
+            config.should include "config.style_guide.partial_paths"
+            config.should include subject.default_partial_path
+          end
           subject.install
         end
       end
@@ -94,7 +108,11 @@ describe StyleGuide::InstallGenerator do
         before { subject.stub(:development_rb).and_return("") }
 
         it "adds an entry for livereload" do
-          subject.should_receive(:application).once.with('config.middleware.insert_before(::Rack::Lock, ::Rack::LiveReload, :min_delay => 500)', :env => "development")
+          subject.should_receive(:application).once do |config, options|
+            options.should == {:env => "development"}
+            config.should include "config.middleware.insert_before"
+            config.should include "Rack::LiveReload"
+          end
           subject.install
         end
       end
