@@ -26,7 +26,7 @@ module Dummy
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    config.style_guide.paths << Rails.root.join("app/views/styles")
+    config.style_guide.paths << Rails.root.join("app/views/style-guide/**/*")
   end
 end
 
