@@ -46,7 +46,8 @@ describe StyleGuide::Partial do
   end
 
   describe "#content" do
-    before { File.stub(:read => "reading is for chumps") }
+    let(:tilt) { double(:tilt, :render => "reading is for chumps") }
+    before { Tilt.stub(:new => tilt) }
 
     subject { partial.content }
 
@@ -87,8 +88,8 @@ describe StyleGuide::Partial do
 
   describe "#classes" do
     let(:content) { %(<div class="noseclip"><img class="earplug noseclip"></div>) }
-
-    before { File.stub(:read => content) }
+    let(:tilt) { double(:tilt, :render => content) }
+    before { Tilt.stub(:new => tilt) }
 
     subject { partial.classes }
 
@@ -97,8 +98,8 @@ describe StyleGuide::Partial do
 
   describe "#ids" do
     let(:content) { %(<div id="stent"><img id="cholesterol"></div>) }
-
-    before { File.stub(:read => content) }
+    let(:tilt) { double(:tilt, :render => content) }
+    before { Tilt.stub(:new => tilt) }
 
     subject { partial.ids }
 

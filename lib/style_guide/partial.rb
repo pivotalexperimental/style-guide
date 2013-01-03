@@ -1,3 +1,4 @@
+require "tilt"
 require "nokogiri"
 require "github/markdown"
 
@@ -15,11 +16,11 @@ module StyleGuide
     end
 
     def title
-      @title ||= File.basename(path, ".erb").titleize.strip
+      @title ||= File.basename(path, File.extname(path)).titleize.strip
     end
 
     def content
-      @content ||= File.read(path)
+      Tilt.new(path).render.gsub(/\</, "&lt;").gsub(/\>/, "&gt;").html_safe
     end
 
     def description

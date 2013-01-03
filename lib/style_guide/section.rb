@@ -33,7 +33,7 @@ module StyleGuide
     private
 
     def partial_paths
-      @partial_paths ||= Dir.glob(File.expand_path("_*.erb", path))
+      @partial_paths ||= Dir.glob(File.expand_path("_*", path))
     end
   end
 end
