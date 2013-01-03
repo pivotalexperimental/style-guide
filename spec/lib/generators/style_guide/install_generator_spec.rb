@@ -11,7 +11,7 @@ describe StyleGuide::InstallGenerator do
       Guard.stub(:const_get).and_return("constant")
       subject.stub(:routes_rb).and_return("mount StyleGuide::Engine")
       subject.stub(:guardfile).and_return("guard 'livereload'")
-      subject.stub(:application_rb).and_return("config.style_guide.partial_paths")
+      subject.stub(:application_rb).and_return("config.style_guide.paths")
       subject.stub(:development_rb).and_return("Rack::LiveReload")
     end
 
@@ -86,7 +86,7 @@ describe StyleGuide::InstallGenerator do
         it "adds an entry for style guide partial paths" do
           subject.should_receive(:application).once do |config, options|
             options.should == nil
-            config.should include "config.style_guide.partial_paths"
+            config.should include "config.style_guide.paths"
             config.should include subject.default_partial_path
           end
           subject.install
@@ -94,7 +94,7 @@ describe StyleGuide::InstallGenerator do
       end
 
       context "when style guide is configured in application.rb" do
-        before { subject.stub(:application_rb).and_return("config.style_guide.partial_paths") }
+        before { subject.stub(:application_rb).and_return("config.style_guide.paths") }
 
         it "does not modify application.rb" do
           subject.should_not_receive(:application)

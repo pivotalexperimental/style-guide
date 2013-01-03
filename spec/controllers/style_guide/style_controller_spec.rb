@@ -6,7 +6,7 @@ describe StyleGuide::StyleController do
 
   before do
     FileUtils.mkdir_p(partial_path)
-    StyleGuide::Engine.config.style_guide.stub(:partial_paths => [partial_path])
+    StyleGuide::Engine.config.style_guide.stub(:paths => [partial_path])
   end
 
   describe "#index" do

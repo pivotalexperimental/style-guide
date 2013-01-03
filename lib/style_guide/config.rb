@@ -1,6 +1,6 @@
 module StyleGuide
   class Config
-    attr_reader :partial_paths
+    attr_reader :paths
 
     def self.bootstrap_glob
       StyleGuide::Engine.root.join("app", "views", "bootstrap", "*")
@@ -10,11 +10,11 @@ module StyleGuide
       @paths = options[:paths] || [self.class.bootstrap_glob]
     end
 
-    def partial_paths=(paths)
+    def paths=(paths)
       if paths.is_a?(Array)
-        @partial_paths = paths
+        @paths = paths
       else
-        @partial_paths = [paths]
+        @paths = [paths]
       end
     end
 
@@ -29,7 +29,7 @@ module StyleGuide
     end
 
     def globbed_paths
-      partial_paths.map { |path| Pathname.glob(path) }
+      paths.map { |path| Pathname.glob(path) }
     end
   end
 end

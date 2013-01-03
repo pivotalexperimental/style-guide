@@ -87,8 +87,8 @@ module StyleGuide
     end
 
     def configure_application
-      unless application_rb && application_rb.include?("config.style_guide.partial_paths")
-        application("config.style_guide.partial_paths << #{default_partial_path}")
+      unless application_rb && application_rb.include?("config.style_guide.paths")
+        application("config.style_guide.paths << #{default_partial_path}")
       end
     end
 
