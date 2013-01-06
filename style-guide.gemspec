@@ -4,6 +4,7 @@ require "style_guide/version"
 Gem::Specification.new do |s|
   s.name        = "style-guide"
   s.version     = StyleGuide::VERSION
+  s.license     = "MIT"
   s.authors     = ["Doc Ritezel"]
   s.email       = ["doc@pivotallabs.com"]
   s.homepage    = "https://github.com/pivotal/style-guide"
