@@ -1,3 +1,5 @@
+<% content = render(:file => partial.path) %>
+
 <div class="style-guide-partial" id="<%= partial.id %>">
   <div class="style-guide-partial-title">
     <%= partial.title %>
@@ -10,7 +12,7 @@
   <% end %>
 
   <div class="style-guide-partial-rendered">
-    <%= render :file => partial.path %>
+    <%= content %>
   </div>
 
   <% if partial.identifiers.any? %>
@@ -23,7 +25,7 @@
 
   <input id="style-guide-toggle-<%= partial.id %>" type="checkbox" />
   <label for="style-guide-toggle-<%= partial.id %>">
-    <pre class="style-guide-partial-source prettyprint linenums"><%= partial.content %></pre>
+    <pre class="style-guide-partial-source prettyprint linenums"><%= escape_for_display(content) %></pre>
     <div class="style-guide-toggle show">Show source code</div>
     <div class="style-guide-toggle hide">Hide source code</div>
   </label>

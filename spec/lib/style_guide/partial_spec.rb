@@ -45,15 +45,6 @@ describe StyleGuide::Partial do
     end
   end
 
-  describe "#content" do
-    let(:tilt) { double(:tilt, :render => "reading is for chumps") }
-    before { Tilt.stub(:new => tilt) }
-
-    subject { partial.content }
-
-    it { should == "reading is for chumps" }
-  end
-
   describe "#description" do
     subject { partial.description }
 
