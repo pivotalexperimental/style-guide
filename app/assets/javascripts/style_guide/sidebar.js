@@ -1,18 +1,20 @@
-(function($){
-  var $window = $(window);
-  var $content = $(".style-guide-content");
-  var $sideBar = $(".style-guide-sidebar");
-  var contentTop = $content.offset().top;
+;(function(){
+  var $content = document.querySelectorAll(".style-guide-content")[0];
+  var $sideBar = document.querySelectorAll(".style-guide-sidebar")[0];
+  var contentTop = $content.offsetTop;
+
+  function isSideBarFixed() {
+    var windowScrollTop = window.scrollY;
+    return windowScrollTop > contentTop;
+  }
 
   function adjustScroll() {
-    var windowScrollTop = $window.scrollTop();
-
-    if (windowScrollTop > contentTop) {
-      $sideBar.addClass("style-guide-fixed");
+    if (isSideBarFixed()) {
+      $sideBar.className = "style-guide-sidebar style-guide-fixed";
     } else {
-      $sideBar.removeClass("style-guide-fixed");
+      $sideBar.className = "style-guide-sidebar";
     }
   }
 
-  $window.scroll(function(){ setTimeout(adjustScroll, 1); });
-})(window.jQuery);
+  window.onscroll = function(){ setTimeout(adjustScroll, 1); };
+})();
