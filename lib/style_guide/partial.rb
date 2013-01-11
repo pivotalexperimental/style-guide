@@ -52,7 +52,6 @@ module StyleGuide
       ActionView::Base.new(Rails.root.join("app", "views"))
     end
 
-
     def style_guide_scope
       [:style_guide, section.id.to_sym]
     end
