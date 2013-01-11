@@ -1,4 +1,3 @@
-require "tilt"
 require "nokogiri"
 require "github/markdown"
 
@@ -43,7 +42,16 @@ module StyleGuide
       ids + classes
     end
 
+    def render
+      @render ||= action_view.render(:file => path)
+    end
+
     private
+
+    def action_view
+      ActionView::Base.new(Rails.root.join("app", "views"))
+    end
+
 
     def style_guide_scope
       [:style_guide, section.id.to_sym]
@@ -56,11 +64,7 @@ module StyleGuide
     end
 
     def parsed
-      @parsed ||= Nokogiri::HTML.parse(rendered)
-    end
-
-    def rendered
-      @rendered ||= Tilt.new(path).render
+      @parsed ||= Nokogiri::HTML.parse(render)
     end
   end
 end

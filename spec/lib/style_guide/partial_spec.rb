@@ -79,8 +79,8 @@ describe StyleGuide::Partial do
 
   describe "#classes" do
     let(:content) { %(<div class="noseclip"><img class="earplug noseclip"></div>) }
-    let(:tilt) { double(:tilt, :render => content) }
-    before { Tilt.stub(:new => tilt) }
+
+    before { partial.stub(:render => content) }
 
     subject { partial.classes }
 
@@ -89,8 +89,8 @@ describe StyleGuide::Partial do
 
   describe "#ids" do
     let(:content) { %(<div id="stent"><img id="cholesterol"></div>) }
-    let(:tilt) { double(:tilt, :render => content) }
-    before { Tilt.stub(:new => tilt) }
+
+    before { partial.stub(:render => content) }
 
     subject { partial.ids }
 
@@ -106,5 +106,15 @@ describe StyleGuide::Partial do
     subject { partial.identifiers }
 
     it { should =~ %w(.puppies .rainbows #ice-cream #lollipops) }
+  end
+
+  describe "#render" do
+    let(:mock_view) { double(:view, :render => "hi") }
+
+    before { partial.stub(:action_view).and_return(mock_view) }
+
+    subject { partial.render }
+
+    it { should == "hi" }
   end
 end
