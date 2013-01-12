@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.license     = "MIT"
   s.authors     = ["Doc Ritezel"]
   s.email       = ["doc@pivotallabs.com"]
-  s.homepage    = "https://github.com/pivotal/style-guide"
+  s.homepage    = "https://github.com/pivotalexperimental/style-guide"
   s.summary     = "A style guide for your Rails application."
   s.description = "A mountable Rails engine where you curate and view your site's visual elements."
 
