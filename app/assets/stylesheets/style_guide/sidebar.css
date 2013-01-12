@@ -1,4 +1,5 @@
 .style-guide-sidebar {
+  display: none;
   margin: 30px 20px;
   border: 1px solid #ddd;
   background-color: white;
@@ -38,6 +39,7 @@
 
 @media (min-width: 720px) {
   .style-guide-sidebar {
+    display: block;
     margin: 10px;
   }
 }

@@ -1,0 +1,32 @@
+.style-guide-navigation-button {
+  font-weight: normal;
+
+  font-size: 18px;
+  line-height: 18px;
+  margin: 7px 10px;
+  padding: 3px 10px;
+
+  cursor: pointer;
+  color: #888;
+  text-shadow: 0 0 30px rgba(0,0,0,0.15);
+
+  -webkit-user-select: none;
+     -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+          user-select: none;
+}
+
+.style-guide-navigation-button:hover {
+  background-color: white;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 0 2px rgba(0, 0, 0, .1);
+     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 0 2px rgba(0, 0, 0, .1);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 0 2px rgba(0, 0, 0, .1);
+}
+
+.style-guide-navigation-button:active {
+  background-color: white;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.25), 0 1px 0 white;
+     -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.25), 0 1px 0 white;
+          box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.25), 0 1px 0 white;
+}

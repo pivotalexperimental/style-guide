@@ -3,9 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Style Guide</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
 
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= stylesheet_link_tag    "style_guide/application", :media => "all" %>
@@ -14,7 +16,7 @@
   <body class="style-guide">
     <div class="style-guide-bar">
       <div class="style-guide-bar-container">
-        <label for="style-guide-checkbox">Sections</label>
+        <label class="style-guide-navigation-button" for="style-guide-checkbox">&#x2630;</label>
         <a class="brand" href="/">Style Guide</a>
         <input id="style-guide-checkbox" type="checkbox" />
         <div class="style-guide-bar-sections">

@@ -24,12 +24,12 @@
 }
 
 .style-guide-bar a.brand {
+  float: right;
   color: #ddd;
   text-shadow: 0 0 10px rgba(0,0,0,.05);
 }
 
-.style-guide-bar a.brand,
-.style-guide-bar label  {
+.style-guide-bar a.brand {
   display: block;
   height: 20px;
   font-size: 20px;
@@ -39,17 +39,10 @@
   padding: 5px 10px;
 }
 
-.style-guide-bar label {
-  color: #888;
+.style-guide-navigation-button {
   position: absolute;
   top: 0;
-  right: 0;
-  cursor: pointer;
-  text-shadow: 0 -1px 0 rgba(0,0,0,.1), 0 1px 0 rgba(255, 255, 255, 0.9);
-  -webkit-user-select: none;
-     -moz-user-select: -moz-none;
-   -khtml-user-select: none;
-          user-select: none;
+  left: 0;
 }
 
 .style-guide-bar input[type=checkbox] {
@@ -64,10 +57,13 @@
 .style-guide-bar-sections {
   overflow: hidden;
   height: 0;
-  background: #ddd;
-  clear: both;
   margin: 0;
   padding: 0;
+
+  clear: both;
+
+  background: #ddd;
+
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1), 0 3px 3px rgba(0, 0, 0, .15);
      -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1), 0 3px 3px rgba(0, 0, 0, .15);
           box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1), 0 3px 3px rgba(0, 0, 0, .15);
@@ -89,12 +85,8 @@
 }
 
 @media (min-width: 720px) {
-  .style-guide-bar label {
+  .style-guide-navigation-button {
     display: none;
-  }
-
-  .style-guide-bar .brand {
-    float: right;
   }
 
   .style-guide-bar input:checked + .style-guide-bar-sections {
