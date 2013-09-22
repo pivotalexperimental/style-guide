@@ -7,13 +7,13 @@
     event.preventDefault();
   }
 
-  function preventDefaultOnClick(elements) {
+  function preventDefaultOn(elements, eventName) {
     for (var i = 0, element; element = elements[i]; i++) {
-      element.onclick = eventDefaultPreventer;
+      element.addEventListener(eventName, eventDefaultPreventer, false);
     }
   }
 
-  preventDefaultOnClick($forms);
-  preventDefaultOnClick($links);
-  preventDefaultOnClick($sources);
+  preventDefaultOn($forms, 'submit');
+  preventDefaultOn($sources, 'click');
+  preventDefaultOn($links, 'click');
 })();
