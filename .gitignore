@@ -12,3 +12,4 @@ spec/dummy/app/assets/stylesheets/.DS_Store
 /tmp
 *.gem
 /.idea
+Gemfile.lock
