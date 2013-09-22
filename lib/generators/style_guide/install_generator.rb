@@ -21,10 +21,6 @@ module StyleGuide
         end
       end
 
-      def application_rb
-        @application_rb ||= File.open(application_rb_path).read
-      end
-
       def development_rb
         @development_rb ||= File.open(development_rb_path).read
       end
@@ -87,8 +83,8 @@ module StyleGuide
     end
 
     def configure_application
-      unless application_rb && application_rb.include?("config.style_guide.paths")
-        application("config.style_guide.paths << #{default_partial_path}")
+      unless development_rb && development_rb.include?("config.style_guide.paths")
+        application("config.style_guide.paths << #{default_partial_path}", :env => "development")
       end
     end
 
@@ -100,7 +96,7 @@ module StyleGuide
 
     def mount_style_guide
       unless routes_rb && routes_rb.include?("mount StyleGuide::Engine")
-        route(%(mount StyleGuide::Engine => "/style-guide"))
+        route(%(mount StyleGuide::Engine => "/style-guide" if Rails.env.development?))
       end
     end
   end
