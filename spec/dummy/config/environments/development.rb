@@ -29,4 +29,6 @@ Dummy::Application.configure do
   config.assets.debug = true
 
   config.middleware.insert_before(::Rack::Lock, ::Rack::LiveReload, :min_delay => 500)
+
+  config.eager_load = false
 end
