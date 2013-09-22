@@ -23,13 +23,6 @@ Anti-Features
 * Curated, not magic: providing fake data for partials is not covered
 
 
-Example
--------
-
-You can see an example of Style Guide at swivel's automatically-deployed
-testing instance: [http://swivel.herokuapp.com](http://swivel.herokuapp.com)
-
-
 Installation
 ------------
 
