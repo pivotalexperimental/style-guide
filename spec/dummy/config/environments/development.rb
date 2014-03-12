@@ -31,4 +31,10 @@ Dummy::Application.configure do
   config.middleware.insert_before(::Rack::Lock, ::Rack::LiveReload, :min_delay => 500)
 
   config.eager_load = false
+
+  #
+  # example configuration
+  #
+  # config.style_guide.application_css = 'special.css'
+
 end

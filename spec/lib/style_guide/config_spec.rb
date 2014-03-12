@@ -1,6 +1,20 @@
 require "spec_helper"
 
 describe StyleGuide::Config do
+
+  describe "#application_css" do
+
+    it 'defaults to application.css' do
+      expect(subject.application_css).to eql('application.css')
+    end
+
+    it 'can be set to a different value' do
+      subject.application_css = 'special.css'
+      expect(subject.application_css).to eql('special.css')
+    end
+
+  end
+
   describe "#paths" do
     context "when no paths have been added" do
       it { should have_at_least(1).path }

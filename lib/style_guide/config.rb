@@ -1,5 +1,10 @@
 module StyleGuide
   class Config
+
+    # !@attribute [w] application_css
+    #   @return [String] Path for main application css
+    attr_writer :application_css
+
     attr_reader :paths
 
     def self.bootstrap_glob
@@ -8,6 +13,16 @@ module StyleGuide
 
     def initialize(options = {})
       @paths = options[:paths] || [self.class.bootstrap_glob]
+    end
+
+    #
+    # Path to the main application.css
+    #
+    # Defaults to 'application.css'
+    #
+    # @return [String] Filename
+    def application_css
+      @application_css ||= "application.css"
     end
 
     def paths=(paths)
