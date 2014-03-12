@@ -22,6 +22,12 @@ describe StyleGuide::StyleController do
       assigns(:current_section).should == assigns(:sections).first
       assigns(:current_section).title.should == "Monkey Hammer"
     end
+
+    it 'assigns application_css' do
+      get(:index, use_route: :styles)
+      expect(assigns[:application_css]).to eql('application.css')
+    end
+
   end
 
   describe "#show" do
@@ -37,5 +43,11 @@ describe StyleGuide::StyleController do
       assigns(:current_section).should be_a StyleGuide::Section
       assigns(:current_section).title.should == "Monkey Hammer"
     end
+
+    it 'assigns application_css' do
+      get(:index, use_route: :styles)
+      expect(assigns[:application_css]).to eql('application.css')
+    end
+
   end
 end
