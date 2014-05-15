@@ -43,7 +43,11 @@ module StyleGuide
     end
 
     def render
-      @render ||= action_view.render(:file => path)
+      @render = action_view.render(file: path)
+    end
+
+    def render_source
+      @render = source.to_xml(:indent => 2)
     end
 
     private
@@ -64,6 +68,12 @@ module StyleGuide
 
     def parsed
       @parsed ||= Nokogiri::HTML.parse(render)
+    end
+
+    def source
+      Nokogiri.XML(action_view.render(file: path)) do |config|
+        config.default_xml.noblanks
+      end
     end
   end
 end
