@@ -23,7 +23,7 @@
 
   <input id="style-guide-toggle-<%= partial.id %>" type="checkbox" />
   <label for="style-guide-toggle-<%= partial.id %>">
-    <pre class="style-guide-partial-source prettyprint linenums"><%= escape_for_display(partial.render_source) %></pre>
+    <pre class="style-guide-partial-source prettyprint linenums"><%= escape_for_display(partial.render_source_code) %></pre>
     <div class="style-guide-toggle show">Show source code</div>
     <div class="style-guide-toggle hide">Hide source code</div>
   </label>

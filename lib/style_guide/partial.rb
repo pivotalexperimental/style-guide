@@ -46,8 +46,10 @@ module StyleGuide
       @render = action_view.render(file: path)
     end
 
-    def render_source
-      @render = source.to_xml(:indent => 2).split("\n")[1..-1].join("\n")
+    def render_source_code
+      # Need to get rid of html and body tags in render. Nokogiri::HTML#to_html throws these tags in.
+      # Also, known bug if partial includes an iframe
+      @render = source
     end
 
     private
@@ -71,9 +73,7 @@ module StyleGuide
     end
 
     def source
-      Nokogiri.XML(action_view.render(file: path)) do |config|
-        config.default_xml.noblanks
-      end
+      Nokogiri.HTML(action_view.render(file: path)).to_html.split("\n")[1..-1].join("\n")
     end
   end
 end
