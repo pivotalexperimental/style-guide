@@ -47,7 +47,7 @@ module StyleGuide
     end
 
     def render_source
-      @render = source.to_xml(:indent => 2)
+      @render = source.to_xml(:indent => 2).split("\n")[1..-1].join("\n")
     end
 
     private

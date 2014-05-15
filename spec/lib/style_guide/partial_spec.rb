@@ -117,4 +117,14 @@ describe StyleGuide::Partial do
 
     it { should == "hi" }
   end
+
+  describe "#render_source" do
+    let(:nokogiri_obj) { double(:xml, :to_xml => "<?xml version='1.0'?>\n<html>\n  <div></div></html>") }
+
+    before { partial.stub(:source).and_return(nokogiri_obj) }
+
+    subject { partial.render_source }
+
+    it { should == "<html>\n  <div></div></html>" }
+  end
 end
