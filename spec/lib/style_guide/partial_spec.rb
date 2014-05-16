@@ -119,13 +119,12 @@ describe StyleGuide::Partial do
   end
 
   describe "#render_source" do
-    # NEED SUGGESTION.
-    let(:source_code) { '<html>\n  <div></div></html>' }
+    let(:mock_view) { double(:view, :render => '<h1>Hello world</h1><div><h2>More stuff</h2><div><p>Mooooore stuff</p></div></div>') }
 
-    before { partial.stub(:source).and_return(source_code) }
+    before { partial.stub(:action_view).and_return(mock_view) }
 
     subject { partial.render_source_code }
 
-    it { should == '<html>\n  <div></div></html>' }
+    it { should == "<h1>Hello world</h1><div>\n  <h2>More stuff</h2>\n  <div>\n    <p>Mooooore stuff</p>\n  </div>\n</div>" }
   end
 end

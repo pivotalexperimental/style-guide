@@ -47,9 +47,7 @@ module StyleGuide
     end
 
     def render_source_code
-      # Need to get rid of html and body tags in render. Nokogiri::HTML#to_html throws these tags in.
-      # Also, known bug if partial includes an iframe
-      @render = source
+      @render = Nokogiri::HTML.fragment(render, 'utf-8').to_xhtml
     end
 
     private
@@ -70,10 +68,6 @@ module StyleGuide
 
     def parsed
       @parsed ||= Nokogiri::HTML.parse(render)
-    end
-
-    def source
-      Nokogiri.HTML(action_view.render(file: path)).to_html.split("\n")[1..-1].join("\n")
     end
   end
 end
