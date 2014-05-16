@@ -43,7 +43,11 @@ module StyleGuide
     end
 
     def render
-      @render ||= action_view.render(:file => path)
+      @render = action_view.render(file: path)
+    end
+
+    def render_source_code
+      @render = Nokogiri::HTML.fragment(render, 'utf-8').to_xhtml
     end
 
     private
