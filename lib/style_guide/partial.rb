@@ -49,7 +49,7 @@ module StyleGuide
     private
 
     def action_view
-      ActionView::Base.new(Rails.root.join("app", "views"))
+      ApplicationController.new.view_context
     end
 
     def style_guide_scope
