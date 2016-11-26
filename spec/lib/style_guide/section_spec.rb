@@ -40,7 +40,7 @@ describe StyleGuide::Section do
 
     context "with multiple paths having the same basename" do
       let(:paths) { ["/neck/wattle", "/underarm/wattle"] }
-      
+
       it { should =~ ["wattle", "wattle1"] }
     end
   end
@@ -71,7 +71,7 @@ describe StyleGuide::Section do
 
     before { Dir.stub(:glob => partial_paths) }
 
-    it { should have(2).partials }
-    its(:first) { should be_a StyleGuide::Partial }
+    specify { subject.size.should eq 2 }
+    specify { subject.first.should be_a StyleGuide::Partial }
   end
 end
