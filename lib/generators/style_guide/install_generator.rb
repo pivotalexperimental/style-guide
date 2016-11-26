@@ -100,7 +100,7 @@ module StyleGuide
 
     def mount_style_guide
       unless routes_rb && routes_rb.include?("mount StyleGuide::Engine")
-        route(%(mount StyleGuide::Engine => "/style-guide"))
+        route(%(mount StyleGuide::Engine at: "/style_guides" if defined?(StyleGuide)))
       end
     end
   end
