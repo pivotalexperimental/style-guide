@@ -108,7 +108,7 @@ describe StyleGuide::InstallGenerator do
         before { subject.stub(:routes_rb).and_return("") }
 
         it "mounts the style guide" do
-          subject.should_receive(:route).with('mount StyleGuide::Engine at: "/style_guides" if defined?(StyleGuide)')
+          subject.should_receive(:route).with('mount StyleGuide::Engine, at: "/style_guides" if defined?(StyleGuide)')
           subject.install
         end
       end

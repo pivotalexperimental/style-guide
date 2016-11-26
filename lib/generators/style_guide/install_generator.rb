@@ -87,13 +87,13 @@ module StyleGuide
 
     def configure_application
       unless application_rb && application_rb.include?("config.style_guide.paths")
-        application("config.style_guide.paths << #{default_partial_path}")
+        application("StyleGuide::Engine.config.style_guide.paths << #{default_partial_path}")
       end
     end
 
     def mount_style_guide
       unless routes_rb && routes_rb.include?("mount StyleGuide::Engine")
-        route(%(mount StyleGuide::Engine at: "/style_guides" if defined?(StyleGuide)))
+        route(%(mount StyleGuide::Engine, at: "/style_guides" if defined?(StyleGuide)))
       end
     end
   end
