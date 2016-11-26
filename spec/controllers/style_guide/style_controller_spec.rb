@@ -28,14 +28,14 @@ describe StyleGuide::StyleController, type: :controller do
 
   describe "#show" do
     it "assigns sections" do
-      get :show, id: "monkey_hammer"
+      get :show, params: { id: "monkey_hammer" }
       assigns(:sections).should be
       assigns(:sections).size.should eq 1
       assigns(:sections).first.should be_a StyleGuide::Section
     end
 
     it "assigns the section" do
-      get :show, id: "monkey_hammer"
+      get :show, params: { id: "monkey_hammer" }
       assigns(:current_section).should be_a StyleGuide::Section
       assigns(:current_section).title.should == "Monkey Hammer"
     end
