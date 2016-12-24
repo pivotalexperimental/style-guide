@@ -1,6 +1,6 @@
 module StyleGuide
   class StyleController < StyleGuide::ApplicationController
-    before_filter :load_sections
+    before_action :load_sections
 
     def index
       @current_section = @sections.first

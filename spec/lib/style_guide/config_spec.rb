@@ -3,7 +3,7 @@ require "spec_helper"
 describe StyleGuide::Config do
   describe "#paths" do
     context "when no paths have been added" do
-      it { should have_at_least(1).path }
+      specify { subject.paths.size.should eq(1) }
     end
 
     context "when adding a path" do
@@ -25,14 +25,14 @@ describe StyleGuide::Config do
     context "after a path has been added" do
       before { subject.paths << "partials-and-magic-beans" }
 
-      its(:paths) { should include "partials-and-magic-beans" }
+      specify { subject.paths.should include "partials-and-magic-beans" }
     end
   end
 
   describe "#sections" do
     context "when no paths have been added" do
-      it { should have_at_least(1).section }
-      its(:'sections.first') { should be_a StyleGuide::Section }
+      it { subject.sections.size.should be >= 1 }
+      specify { subject.sections.first.should be_a StyleGuide::Section }
     end
 
     context "when adding a nonexistent path" do

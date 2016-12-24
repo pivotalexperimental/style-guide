@@ -103,36 +103,12 @@ describe StyleGuide::InstallGenerator do
       end
     end
 
-    describe "development configuration" do
-      context "when livereload is not configured in development.rb" do
-        before { subject.stub(:development_rb).and_return("") }
-
-        it "adds an entry for livereload" do
-          subject.should_receive(:application).once do |config, options|
-            options.should == {:env => "development"}
-            config.should include "config.middleware.insert_before"
-            config.should include "Rack::LiveReload"
-          end
-          subject.install
-        end
-      end
-
-      context "when livereload is already configured in development.rb" do
-        before { subject.stub(:development_rb).and_return("Rack::LiveReload") }
-
-        it "does not modify development.rb" do
-          subject.should_not_receive(:application)
-          subject.install
-        end
-      end
-    end
-
     describe "mounting" do
       context "when style guide is not mounted" do
         before { subject.stub(:routes_rb).and_return("") }
 
         it "mounts the style guide" do
-          subject.should_receive(:route).with('mount StyleGuide::Engine => "/style-guide"')
+          subject.should_receive(:route).with('mount StyleGuide::Engine, at: "/style_guides" if defined?(StyleGuide)')
           subject.install
         end
       end

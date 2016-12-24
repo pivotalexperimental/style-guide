@@ -10,7 +10,6 @@ module StyleGuide
 
       configure_guard_livereload
       configure_application
-      configure_development
       mount_style_guide
     end
 
@@ -88,19 +87,13 @@ module StyleGuide
 
     def configure_application
       unless application_rb && application_rb.include?("config.style_guide.paths")
-        application("config.style_guide.paths << #{default_partial_path}")
-      end
-    end
-
-    def configure_development
-      unless development_rb && development_rb.include?("Rack::LiveReload")
-        application("config.middleware.insert_before(::Rack::Lock, ::Rack::LiveReload, :min_delay => 500) if defined?(Rack::LiveReload)", :env => "development")
+        application("StyleGuide::Engine.config.style_guide.paths << #{default_partial_path}")
       end
     end
 
     def mount_style_guide
       unless routes_rb && routes_rb.include?("mount StyleGuide::Engine")
-        route(%(mount StyleGuide::Engine => "/style-guide"))
+        route(%(mount StyleGuide::Engine, at: "/style_guides" if defined?(StyleGuide)))
       end
     end
   end
